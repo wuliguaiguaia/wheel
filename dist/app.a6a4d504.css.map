@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/var.scss"],"names":[],"mappings":";;;;;;AAAA,WAAW","file":"app.a6a4d504.css","sourceRoot":"..","sourcesContent":["/* color */\n$--color-primary:#409EFF !default;\n$--color-success: #67C23A !default;\n$--color-warning: #E6A23C !default;\n$--color-danger: #F56C6C !default;\n$--color-info: #909399 !default;"]}
