@@ -1,0 +1,24 @@
+/* color */
+$--color-primary:#409EFF !default;
+$--color-success: #67C23A !default;
+$--color-info: #909399 !default;
+$--color-warning: #E6A23C !default;
+$--color-danger: #F56C6C !default;
+
+$--color-primary-light-2: mix(#fff, $--color-primary, 20%) !default;
+$--color-success-light-2: mix(#fff, $--color-success, 20%) !default;
+$--color-info-light-2: mix(#fff, $--color-info, 20%) !default;
+$--color-warning-light-2: mix(#fff, $--color-warning, 20%) !default;
+$--color-danger-light-2: mix(#fff, $--color-danger, 20%) !default;
+
+$--color-primary-light-8: mix(#fff, $--color-primary, 80%) !default;
+$--color-success-light-8: mix(#fff, $--color-success, 80%) !default;
+$--color-info-light-8: mix(#fff, $--color-info, 80%) !default;
+$--color-warning-light-8: mix(#fff, $--color-warning, 80%) !default;
+$--color-danger-light-8: mix(#fff, $--color-danger, 80%) !default;
+
+$--color-primary-light-9: mix(#fff, $--color-primary, 90%) !default;
+$--color-success-light-9: mix(#fff, $--color-success, 90%) !default;
+$--color-info-light-9: mix(#fff, $--color-info, 90%) !default;
+$--color-warning-light-9: mix(#fff, $--color-warning, 90%) !default;
+$--color-danger-light-9: mix(#fff, $--color-danger, 90%) !default;

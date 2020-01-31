@@ -1,7 +1,17 @@
 import Vue from "vue";
-import Button from './button';
+import "./icon/iconfont.scss";
+
+import Button from './components/button/button';
+import ButtonGroup from "./components/button/button-group"
 Vue.component('z-button', Button);
+Vue.component('z-button-group', ButtonGroup);
 
 new Vue({
-    el: '#app'
+    el: '#app',
+    methods:{
+        stop(){
+            console.log('stop');
+            
+        }
+    }
 })
