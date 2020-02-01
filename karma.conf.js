@@ -8,10 +8,12 @@ module.exports = function(config) {
 		frameworks: ["mocha", "sinon-chai"],
 		client: {
 			chai: {
-				includeStack: true
-			}
-		},
-
+				includeStack: true,
+      },
+      mocha: {
+        timeout: 4000
+      }
+    },
 		// list of files / patterns to load in the browser
 		files: ["dist/**/*.test.js", "dist/**/*.test.css"],
 
