@@ -1,4 +1,5 @@
-export default function(config) {
+// eslint-disable-next-line no-undef
+module.exports = function(config) {
 	config.set({
 		// base path that will be used to resolve all patterns (eg. files, exclude)
 		basePath: "",
@@ -51,4 +52,4 @@ export default function(config) {
 		// how many browser should be started simultaneous
 		concurrency: Infinity
 	});
-}
+};

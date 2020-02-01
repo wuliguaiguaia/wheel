@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: ["vue"],
   rules: {
-    indent: [2, "tab"],
+    indent: [2, "space"],
     "linebreak-style": [2, "unix"],
     quotes: [2, "double"],
     semi: [2, "always"],
