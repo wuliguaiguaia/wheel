@@ -1,7 +1,7 @@
 {
-  "name": "z-wheel",
-  "version": "1.0.0",
-  "description": "",
+  "name": "z-wheel-0201",
+  "version": "0.0.1",
+  "description": "这是一个vue ui框架",
   "main": "index.js",
   "scripts": {
     "start": "npx parcel index.html --no-cache",
@@ -13,8 +13,8 @@
     "url": "git+https://github.com/wuliguaiguaia/wheel.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alias",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wuliguaiguaia/wheel/issues"
   },
@@ -28,6 +28,8 @@
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.1.1",
     "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.1.2",
     "karma": "^4.4.1",
     "karma-chai": "^0.1.0",
     "karma-chai-spies": "^0.1.4",

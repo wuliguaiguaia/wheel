@@ -6,11 +6,13 @@
 
 <script>
 export default {
-    name: 'z-button-group'
-}
+	name: "z-button-group"
+};
 </script>
 
 <style lang='scss' scoped>
+// margin-left -1 做边框  
+// hover时 position zindex
 .z-button-group{
     
 }

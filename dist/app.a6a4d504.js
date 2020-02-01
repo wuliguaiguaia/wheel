@@ -12454,26 +12454,26 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: 'z-button',
+  name: "z-button",
   props: {
     type: {
       type: String,
-      default: 'default',
+      default: "default",
       validator: function validator(val) {
-        return ['default', 'primary', 'success', 'warning', 'danger', 'info', 'text'].includes(val);
+        return ["default", "primary", "success", "warning", "danger", "info", "text"].includes(val);
       }
     },
     nativeType: {
       type: String,
-      default: 'button',
+      default: "button",
       validator: function validator(val) {
-        return ['button', 'submit', 'reset'].includes(val);
+        return ["button", "submit", "reset"].includes(val);
       }
     },
     size: {
       type: String,
       validator: function validator(val) {
-        return ['medium', 'small', 'mini'].includes(val);
+        return ["medium", "small", "mini"].includes(val);
       }
     },
     loading: Boolean,
@@ -12485,11 +12485,11 @@ var _default = {
   },
   computed: {
     buttonClass: function buttonClass() {
-      return ['z-button', this.type ? 'z-button--' + this.type : '', this.size ? 'z-button--' + this.size : '', {
-        'is-plain': this.plain,
-        'is-round': this.round,
-        'is-circle': this.circle,
-        'is-disabled': this.disabled
+      return ["z-button", this.type ? "z-button--" + this.type : "", this.size ? "z-button--" + this.size : "", {
+        "is-plain": this.plain,
+        "is-round": this.round,
+        "is-circle": this.circle,
+        "is-disabled": this.disabled
       }];
     }
   }
@@ -12584,7 +12584,7 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: 'z-button-group'
+  name: "z-button-group"
 };
 exports.default = _default;
         var $45ed87 = exports.default || module.exports;
@@ -12647,15 +12647,15 @@ var _buttonGroup = _interopRequireDefault(require("./components/button/button-gr
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue.default.component('z-button', _button.default);
+_vue.default.component("z-button", _button.default);
 
-_vue.default.component('z-button-group', _buttonGroup.default);
+_vue.default.component("z-button-group", _buttonGroup.default);
 
 new _vue.default({
-  el: '#app',
+  el: "#app",
   methods: {
     stop: function stop() {
-      console.log('stop');
+      console.log("stop");
     }
   }
 });

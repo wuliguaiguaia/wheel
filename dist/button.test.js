@@ -12449,26 +12449,26 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: 'z-button',
+  name: "z-button",
   props: {
     type: {
       type: String,
-      default: 'default',
+      default: "default",
       validator: function validator(val) {
-        return ['default', 'primary', 'success', 'warning', 'danger', 'info', 'text'].includes(val);
+        return ["default", "primary", "success", "warning", "danger", "info", "text"].includes(val);
       }
     },
     nativeType: {
       type: String,
-      default: 'button',
+      default: "button",
       validator: function validator(val) {
-        return ['button', 'submit', 'reset'].includes(val);
+        return ["button", "submit", "reset"].includes(val);
       }
     },
     size: {
       type: String,
       validator: function validator(val) {
-        return ['medium', 'small', 'mini'].includes(val);
+        return ["medium", "small", "mini"].includes(val);
       }
     },
     loading: Boolean,
@@ -12480,11 +12480,11 @@ var _default = {
   },
   computed: {
     buttonClass: function buttonClass() {
-      return ['z-button', this.type ? 'z-button--' + this.type : '', this.size ? 'z-button--' + this.size : '', {
-        'is-plain': this.plain,
-        'is-round': this.round,
-        'is-circle': this.circle,
-        'is-disabled': this.disabled
+      return ["z-button", this.type ? "z-button--" + this.type : "", this.size ? "z-button--" + this.size : "", {
+        "is-plain": this.plain,
+        "is-round": this.round,
+        "is-circle": this.circle,
+        "is-disabled": this.disabled
       }];
     }
   }
@@ -12576,9 +12576,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var expect = chai.expect;
 _vue.default.config.productionTip = false;
-_vue.default.config.devtools = false; // 1\done 异步代码测试 试问哪的异步？
+_vue.default.config.devtools = false; // 1\done 异步代码测试 哪的异步？
 
-describe("Button", function (_) {
+describe("Button", function () {
   it("create", function (done) {
     var constructor = _vue.default.extend(_button.default);
 
@@ -12652,7 +12652,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56657" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53465" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

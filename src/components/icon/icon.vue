@@ -4,13 +4,15 @@
 
 <script>
 export default {
-    name: 'z-icon',
-    props:{
-        name:{
-            type: String
-        }
-    }
-}
+	name: "z-icon",
+	props:{
+		name:{
+
+
+			type: String
+		}
+	}
+};
 </script>
 
 <style lang='scss' scoped>
