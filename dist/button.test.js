@@ -12521,7 +12521,8 @@ var _default = {
     plain: Boolean,
     round: Boolean,
     circle: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
+    autofocus: Boolean
   },
   computed: {
     buttonClass: function buttonClass() {
@@ -12553,9 +12554,9 @@ exports.default = _default;
       ref: "button",
       class: _vm.buttonClass,
       attrs: {
-        disabled: _vm.disabled,
+        disabled: _vm.disabled || _vm.loading,
         type: _vm.nativeType,
-        autofocus: "autofocus"
+        autofocus: _vm.autofocus
       },
       on: {
         click: function($event) {
@@ -12572,9 +12573,8 @@ exports.default = _default;
           })
         : _vm._e(),
       _vm._v(" "),
-      _vm._t("default")
-    ],
-    2
+      _vm.$slots.default ? _c("span", [_vm._t("default")], 2) : _vm._e()
+    ]
   )
 }
 var staticRenderFns = []
