@@ -12,15 +12,29 @@
   <z-button  plain  type="primary" size="small">1</z-button>
   <z-button  plain  type="primary" size="small">1</z-button>
   <z-button  plain  type="primary" size="small">1</z-button>
-
 </div>
 </template>
 
 <script>
 
 export default {
-components:{
-}
+  data(){
+    return{
+      radio: '',
+      xx:''
+    }
+  },
+ components:{
+  },
+  watch: {
+    radio(val){
+      console.log(val)
+    },
+    xx(val){
+      console.log(val);
+      
+    }
+  }
 }
 </script>
 
