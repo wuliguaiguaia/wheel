@@ -1,0 +1,9 @@
+{
+  "button": "./src/components/button/index.js",
+  "button-group": "./src/components/button-group/index.js",
+  "icon": "./src/components/icon/index.js",
+  "input": "./src/components/input/index.js",
+  "radio": "./src/components/radio/index.js",
+  "radio-group": "./src/components/radio-group/index.js",
+  "cascader": "./src/components/cascader/index.js"
+}

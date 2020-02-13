@@ -1,5 +1,5 @@
 import { destroyVM, createTest } from "./utils"
-import Button from "../../src/components/button/button";
+import Button from "../../src/components/button";
 const expect = chai.expect;
 
 

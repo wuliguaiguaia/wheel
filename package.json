@@ -6,8 +6,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "link": "npx parcel build index.js"
+    "test": "npm run build test/**/* --no-minify --no-cache && karma start --single-run",
+    "test:watch": "npm run build test/**/* --no-cache & karma start",
+    "link": "npx parcel build index.js",
+    "open": "git open",
+    "new": "node build/bin/new.js",
+    "build:entry": "node build/bin/build-entry.js"
   },
   "repository": {
     "type": "git",
@@ -31,13 +35,13 @@
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-unit-mocha": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "sass": "^1.23.7",
-    "sass-loader": "^8.0.0",
     "@vue/component-compiler-utils": "^3.1.1",
+    "@vue/test-utils": "1.0.0-beta.29",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.1.2",
+    "file-save": "^0.2.0",
+    "json-templater": "^1.2.0",
     "karma": "^4.4.1",
     "karma-chai": "^0.1.0",
     "karma-chai-spies": "^0.1.4",
@@ -47,8 +51,11 @@
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^7.0.1",
     "parcel-bundler": "^1.12.4",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
     "sinon": "^8.1.1",
     "sinon-chai": "^3.4.0",
+    "uppercamelcase": "^3.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "alias": {
