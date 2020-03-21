@@ -6,6 +6,6 @@
 
 <script>
 export default {
-	name: "ZButtonGroup"
+	name: 'ZButtonGroup'
 };
 </script>

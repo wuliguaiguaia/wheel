@@ -16,27 +16,27 @@
 
 <script>
 export default {
-    name: 'ZRadio',
-    props:{
-        disabled: Boolean,
-        label: String
-    },
-    data(){
-        return {
-        }
-    },
-    methods:{
+	name: 'ZRadio',
+	props:{
+		disabled: Boolean,
+		label: String
+	},
+	data(){
+		return {
+		};
+	},
+	methods:{
 
-    },
-    computed:{
-        model:{
-            get(){
-                return this.value;
-            },
-            set(val){
-                this.$emit('input', val)
-            }
-        }
-    },  
-}
+	},
+	computed:{
+		model:{
+			get(){
+				return this.value;
+			},
+			set(val){
+				this.$emit('input', val);
+			}
+		}
+	},  
+};
 </script>

@@ -1,10 +1,11 @@
 <template>
-  <div></div>
+  <div class="z-radio-group">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'ZRadioGroup',
-  data(){}
-}
+	name: 'ZRadioGroup',
+};
 </script>

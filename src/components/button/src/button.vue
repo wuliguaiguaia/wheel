@@ -14,26 +14,26 @@
 
 <script>
 export default {
-	name: "ZButton",
+	name: 'ZButton',
 	props: {
 		type: {
 			type: String,
-			default: "default",
+			default: 'default',
 			validator(val){
-				return ["default", "primary", "success", "warning", "danger", "info", "text"].includes(val);
+				return ['default', 'primary', 'success', 'warning', 'danger', 'info', 'text'].includes(val);
 			}
 		},
 		nativeType:{
 			type: String,
-			default: "button",
+			default: 'button',
 			validator(val){
-				return ["button", "submit", "reset"].includes(val);
+				return ['button', 'submit', 'reset'].includes(val);
 			}
 		},
 		size:{
 			type: String,
 			validator(val){
-				return ["medium","small", "mini"].includes(val);
+				return ['medium','small', 'mini'].includes(val);
 			}
 		},
 		loading:Boolean,
@@ -41,19 +41,19 @@ export default {
 		plain:Boolean,
 		round:Boolean,
 		circle:Boolean,
-    disabled:Boolean,
-    autofocus:Boolean
+		disabled:Boolean,
+		autofocus:Boolean
 	},
 	computed: {
 		buttonClass(){
-			return ["z-button", 
-				this.type ? "z-button--" + this.type: "",
-				this.size ? "z-button--" + this.size: "",
+			return ['z-button', 
+				this.type ? 'z-button--' + this.type: '',
+				this.size ? 'z-button--' + this.size: '',
 				{
-					"is-plain": this.plain,
-					"is-round": this.round,
-					"is-circle": this.circle,
-					"is-disabled": this.disabled
+					'is-plain': this.plain,
+					'is-round': this.round,
+					'is-circle': this.circle,
+					'is-disabled': this.disabled
 				}
 			];
 		}

@@ -1,5 +1,29 @@
 @import "../mixins/mixins";
 @import "../common/var";
+@import "../common/reset.scss";
 
 @include b(cascader) {
+    .z-cascader__panel--value{
+        border: 1px solid red;
+        width: 100px;
+    }
+    .z-cascader__panel--inner{
+        width: 100px;
+        margin-left: 100px;
+        position: absolute;
+        top: 0;
+    }
+    .z-cascader__wrapper{
+        width: 100px;
+    }
+    .z-cascader__wrapper{
+        width: 100%;
+    }
+    .z-cascader{
+        margin-top: 100px;
+        position: relative;
+    }
+    .z-cascader__panel{
+        position: relative;
+    }
 }

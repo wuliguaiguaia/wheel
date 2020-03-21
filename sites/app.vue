@@ -1,41 +1,26 @@
 <template>
-<div>
-  <z-button disabled  loading  type="text" icon="icon-tuichu">sfsadf</z-button>
-  <z-button  type="text">sfsadf</z-button>
-  <z-button  plain  type="primary">sfsadf</z-button>
-  <z-button plain disabled  type="primary">sfsadf</z-button>
-
-  <z-button  circle  type="primary" size="small">1</z-button>
-  <z-button  round  type="primary" size="small">1</z-button>
-  <z-button  plain  type="primary" size="small">1</z-button>
-  <z-button  plain  type="primary" size="small">1</z-button>
-  <z-button  plain  type="primary" size="small">1</z-button>
-  <z-button  plain  type="primary" size="small">1</z-button>
-  <z-button  plain  type="primary" size="small">1</z-button>
-</div>
+  <div id="app">
+	<main-header></main-header>
+    <router-view/>
+  </div>
 </template>
 
-<script>
 
+<script>
+import mainHeader from './common/components/mainHeader';
 export default {
-  data(){
-    return{
-      radio: '',
-      xx:''
-    }
-  },
- components:{
-  },
-  watch: {
-    radio(val){
-      console.log(val)
-    },
-    xx(val){
-      console.log(val);
-      
-    }
-  }
-}
+	data(){
+		return{};
+	},
+	components:{
+		mainHeader
+	},
+	watch: {
+	},
+	methods: {
+		handleChange(){}
+	}
+};
 </script>
 
 <style lang="scss">
