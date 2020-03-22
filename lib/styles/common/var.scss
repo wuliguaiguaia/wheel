@@ -1,0 +1,80 @@
+/* color */
+// 所有色
+$--color-primary:#409EFF !default;
+$--color-assist:#409EFF !default;
+$--color-success: #67C23A !default;
+$--color-info: #909399 !default;
+$--color-warning: #E6A23C !default;
+$--color-danger: #F56C6C !default;
+
+// 主色系
+$--color-primary-light-1: mix(#fff, $--color-primary, 10%) !default; /* 53a8ff */
+$--color-primary-light-2: mix(#fff, $--color-primary, 20%) !default; /* 66b1ff */
+$--color-primary-light-3: mix(#fff, $--color-primary, 30%) !default; /* 79bbff */
+$--color-primary-light-4: mix(#fff, $--color-primary, 40%) !default; /* 8cc5ff */
+$--color-primary-light-5: mix(#fff, $--color-primary, 50%) !default; /* a0cfff */
+$--color-primary-light-6: mix(#fff, $--color-primary, 60%) !default; /* b3d8ff */
+$--color-primary-light-7: mix(#fff, $--color-primary, 70%) !default; /* c6e2ff */
+$--color-primary-light-8: mix(#fff, $--color-primary, 80%) !default; /* d9ecff */
+$--color-primary-light-9: mix(#fff, $--color-primary, 90%) !default; /* ecf5ff */
+
+// 副色系
+$--color-assist-light-1: mix(#fff, $--color-assist, 10%) !default;
+$--color-assist-light-2: mix(#fff, $--color-assist, 20%) !default;
+$--color-assist-light-3: mix(#fff, $--color-assist, 30%) !default;
+$--color-assist-light-4: mix(#fff, $--color-assist, 40%) !default;
+$--color-assist-light-5: mix(#fff, $--color-assist, 50%) !default;
+$--color-assist-light-6: mix(#fff, $--color-assist, 60%) !default;
+$--color-assist-light-7: mix(#fff, $--color-assist, 70%) !default;
+$--color-assist-light-8: mix(#fff, $--color-assist, 80%) !default;
+$--color-assist-light-9: mix(#fff, $--color-assist, 90%) !default;
+
+// 配色
+$--color-success-light: mix(#fff, $--color-success, 80%) !default;
+$--color-warning-light: mix(#fff, $--color-warning, 80%) !default;
+$--color-danger-light: mix(#fff, $--color-danger, 80%) !default;
+$--color-info-light: mix(#fff, $--color-info, 80%) !default;
+
+$--color-success-lighter: mix(#fff, $--color-success, 90%) !default;
+$--color-warning-lighter: mix(#fff, $--color-warning, 90%) !default;
+$--color-danger-lighter: mix(#fff, $--color-danger, 90%) !default;
+$--color-info-lighter: mix(#fff, $--color-info, 90%) !default;
+
+// 文本色
+$--color-text-primary: #303133 !default;
+$--color-text-regular: #606266 !default;
+$--color-text-secondary: #909399 !default;
+$--color-text-placeholder: #C0C4CC !default;
+
+/* background */
+$--background-color-base: #F5F7FA !default;
+
+/* border */
+$--border-base: 1px solid #DCDFE6 !default;
+$--border-color-base: #DCDFE6 !default;
+$--border-color-light: #E4E7ED !default;
+$--border-color-lighter: #EBEEF5 !default;
+$--border-radius-base: 4px !default;
+
+/* box-shadow */
+$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
+$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+
+/* font */
+$--font-size-extra-large: 20px !default;
+$--font-size-large: 18px !default;
+$--font-size-medium: 16px !default;
+$--font-size-base: 14px !default;
+$--font-size-small: 13px !default;
+$--font-size-extra-small: 12px !default;
+
+$--font-weight-primary: 500 !default;
+$--font-weight-secondary: 100 !default;
+$--font-line-height-primary: 24px !default;
+$--font-line-height-secondary: 16px !default;
+$--font-color-disabled-base: #bbb !default;
+
+/* icon */ 
+$--icon-color: #666 !default;
+$--icon-color-base: $--color-info !default;

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
 	<main-header></main-header>
+	<z-cascader></z-cascader>
     <router-view/>
   </div>
 </template>

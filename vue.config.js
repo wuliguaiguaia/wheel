@@ -34,6 +34,7 @@ module.exports = {
 		config.resolve.alias
 			.set('@', resolve('./src'))
 			.set('sites', resolve('./sites'))
-			.set('tests', resolve('./tests'));
+			.set('tests', resolve('./tests'))
+			.set('zWheel', resolve('./'));
 	}
 };
