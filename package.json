@@ -1,6 +1,6 @@
 {
   "name": "z-wheel-0201",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "这是一个vue ui框架",
   "main": "dist/index.js",
   "private": false,

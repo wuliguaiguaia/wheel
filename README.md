@@ -1,7 +1,15 @@
 # z-wheel
 
+# commit 规范
+- fix
+- feat
+- build
+- pub
+- style
+- docs
 
-scripts:
+
+备用 scripts:
 ```
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -11,3 +19,5 @@ scripts:
     "openHub": "git open", // 打开github网页
     "newCom": "node build/bin/new.js" // 新增组件 “npm run new test 测试组件”
 ```
+
+
