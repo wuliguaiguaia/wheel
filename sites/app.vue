@@ -11,7 +11,15 @@
 import mainHeader from './common/components/mainHeader';
 export default {
 	data(){
-		return{};
+		return {
+			loading: null
+		};
+	},
+	created(){
+		this.loading = this.$loading({});
+		setTimeout(() => {
+			this.loading.close();
+		}, 1000);
 	},
 	components:{
 		mainHeader

@@ -5,5 +5,7 @@
   "input": "./src/components/input/index.js",
   "radio": "./src/components/radio/index.js",
   "radio-group": "./src/components/radio-group/index.js",
-  "cascader": "./src/components/cascader/index.js"
+  "cascader": "./src/components/cascader/index.js",
+  "loading": "./src/components/loading/index.js",
+  "message": "./src/components/message/index.js"
 }

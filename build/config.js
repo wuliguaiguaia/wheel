@@ -1,9 +1,10 @@
+var path = require('path');
 var nodeExternals = require('webpack-node-externals');
 var Components = require('../components.json');
 var externals = {};
 
 Object.keys(Components).forEach(function(key) {
-	externals[`zWheel/src/components/${key}`] = `zWheel/lib/${key}`;
+	externals[`z-wheel/src/components/${key}`] = `z-wheel/lib/${key}`;
 });
 
 externals = [
@@ -14,4 +15,10 @@ externals = [
 		externals
 	),
 	nodeExternals()
-];exports.externals = externals;
+];
+
+exports.alias = {
+	'z-wheel': path.resolve(__dirname, '../')
+};
+
+exports.externals = externals;

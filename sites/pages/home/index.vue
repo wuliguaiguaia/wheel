@@ -4,7 +4,7 @@
             <div class="left">
                 <div>自從遇見了你</div>
                 <div>世間所有美好終成具象</div>
-                <button @click="$router.push({path:'/getStart'})">Get Start</button>
+                <z-button @click="$router.push({path:'/getStart'})">Get Start</z-button>
             </div>
         </div>
     </div>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-	name: 'home'
+	name: 'home',
 };
 </script>
 

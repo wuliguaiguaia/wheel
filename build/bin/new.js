@@ -9,9 +9,9 @@ const fs = require('fs');
 const fileSave = require('file-save');
 const uppercamelcase = require('uppercamelcase');
 const componentname = process.argv[2];
-// const chineseName = process.argv[3] || componentname;
+const chineseName = process.argv[3] || componentname;
 const ComponentName = uppercamelcase(componentname);
-const ComponentPath = path.resolve(__dirname, '../../components', componentname);
+const ComponentPath = path.resolve(__dirname, '../../src/components', componentname);
 
 const Files = [
 	// 组件入口
@@ -41,7 +41,7 @@ export default {
 	// 组件md文档
 	{
 		filename: path.join('../../../sites/docs', `${componentname}.md`),
-		content: `## ${ComponentName}`
+		content: `## ${ComponentName} ${chineseName}`
 	},
 	// 单元测试
 	{
@@ -81,8 +81,8 @@ describe('${ComponentName}', () => {
 // 添加到components.json
 const componentsFile = require('../../components.json');
 if (componentsFile[componentname]) {
-	console.error(`${componentname} 已存在.`);
-	process.exit(1);
+	// console.error(`${componentname} 已存在.`);
+	// process.exit(1);
 }
 componentsFile[componentname] = `./src/components/${componentname}/index.js`;
 fileSave(path.join(__dirname, '../../components.json'))
@@ -98,6 +98,8 @@ fileSave(sassPath)
 
 // 创建 package
 Files.forEach(file => {
+	console.log(path.resolve(ComponentPath, file.filename));
+	
 	fileSave(path.join(ComponentPath, file.filename))
 		.write(file.content, 'utf8')
 		.end('\n');

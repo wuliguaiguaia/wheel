@@ -1,0 +1,6 @@
+@import "../mixins/mixins";
+@import "../common/var";
+@import "../common/reset.scss";
+
+@include b(message) {
+}
