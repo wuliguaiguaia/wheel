@@ -1,7 +1,8 @@
-import ZMessage from './src/main';
+import service from './src/service';
 
-ZMessage.install = function(Vue) {
-	Vue.component(ZMessage.name, ZMessage);
+export default {
+	install (Vue) {
+		Vue.prototype.$message = service;
+	},
+	service
 };
-
-export default ZMessage;

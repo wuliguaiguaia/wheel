@@ -1,8 +1,8 @@
 <template>
-  <transition name="fade">
+  <transition name="fade" appear>
     <div class="z-loading" v-show="show">
-      <div class="z-loading-bar" v-if="customTip === 'bar'"></div>
-      <div class="z-loading-spin" v-else-if="customTip === 'circle'" >
+      <div class="z-loading__bar" v-if="customTip === 'bar'"></div>
+      <div class="z-loading__spin" v-else-if="customTip === 'circle'" >
         <svg class="circle" viewBox="25 25 50 50">
           <defs>
             <linearGradient id="grad">
@@ -14,7 +14,7 @@
         </svg>
       </div>
       <div v-else></div>
-      <div v-if="text">{{text}}</div>
+      <div v-if="text" class="z-loading__text">{{text}}</div>
     </div>
   </transition>
 </template>

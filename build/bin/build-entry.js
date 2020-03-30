@@ -30,6 +30,7 @@ const install = function(Vue, opts = {}) {
   };
 
   Vue.prototype.$loading = Loading.service;
+  Vue.prototype.$message = Message.service;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -45,7 +46,6 @@ export default {
 
 
 const ComponentNames = Object.keys(Components);
-console.log(ComponentNames);
 
 const includeComponentTemplate = [];
 const installTemplate = [];
@@ -59,7 +59,7 @@ ComponentNames.forEach(name => {
 			package: name
 		})
 	);
-	if (!['Loading'].includes(componentName)){
+	if (!['Loading', 'Message'].includes(componentName)){
 		installTemplate.push(render(INSTALL_COMPONENT_TEMPLATE, {
 			name: componentName,
 			component: name

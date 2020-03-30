@@ -1,12 +1,12 @@
 <template>
     <div class="main">
-        <div class="container jusCenter-alignCenter">
+        <!-- <div class="container jusCenter-alignCenter">
             <div class="left">
                 <div>自從遇見了你</div>
                 <div>世間所有美好終成具象</div>
                 <z-button @click="$router.push({path:'/getStart'})">Get Start</z-button>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 

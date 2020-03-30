@@ -1,8 +1,23 @@
 @import "config";
+
 @mixin b($block){
-    $B: $namespace + '-' + $block;
+    $B: $namespace + '-' + $block !global; 
     .#{$B}{
         @content;
+    }
+}
+
+@mixin e($element){
+    $selector: &;
+    $currentSelector: '';
+    @each $unit in $element {
+        $currentSelector: #{ $currentSelector + '.' + $B + $element-separator + $unit + ','}
+    }
+
+    @at-root {
+        #{$currentSelector} {
+            @content;
+        }
     }
 }
 

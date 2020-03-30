@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-	<main-header></main-header>
-	<z-cascader></z-cascader>
-    <router-view/>
+	<!-- <main-header></main-header>
+    <router-view/> -->
   </div>
 </template>
 
@@ -12,7 +11,8 @@ import mainHeader from './common/components/mainHeader';
 export default {
 	data(){
 		return {
-			loading: null
+			loading: null,
+			message: null
 		};
 	},
 	created(){
@@ -20,9 +20,12 @@ export default {
 		setTimeout(() => {
 			this.loading.close();
 		}, 1000);
+
+		setTimeout(() => {
+			this.message = this.$message.loading('dasdasdfsadfsdfsad');
+		}, 1000);
 	},
 	components:{
-		mainHeader
 	},
 	watch: {
 	},

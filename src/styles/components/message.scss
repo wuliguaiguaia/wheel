@@ -3,4 +3,50 @@
 @import "../common/reset.scss";
 
 @include b(message) {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: all .3s ease-in-out;
+    border-radius: $--border-radius-base;
+    box-shadow: $--box-shadow-dark;
+    line-height: 20px;
+    font-size: 14px;
+
+    @include when(closeable){}
+
+    @include m(success) {}
+
+    @include m(info) {}
+
+    @include m(warning) {}
+
+    @include m(error) {}
+
+    @include e(icon) {
+        margin-right: 10px;
+        font-size: 18px;
+    }
+
+    & .el-icon-success {
+        color: $--color-success;
+    }
+
+    & .el-icon-error {
+        color: $--color-danger;
+    }
+
+    & .el-icon-info {
+        color: $--color-info;
+    }
+
+    & .el-icon-warning {
+        color: $--color-warning;
+    }
 }
+
+@import "../common/transition.scss";

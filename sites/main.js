@@ -6,7 +6,7 @@ import ZWheel from '../src/index';
 import './../src/styles/components/index.scss';
 // import "./icon/iconfont.scss";
 import router from './router';
-import './common/styles/reset.css';
+// import './common/styles/reset.css';
 
 Vue.use(ZWheel);
 Vue.config.productionTip = false;

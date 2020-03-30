@@ -1,6 +1,7 @@
 @import "../mixins/mixins";
 @import "../common/var";
 @import "../common/reset.scss";
+@import "../common/transition.scss";
 
 @include b(loading) {
     position: fixed;
@@ -11,9 +12,9 @@
     transition: opacity 0.3s;
 }
 
-@include b(loading-bar) {
+@include b(loading__bar) {
     width: 0%;
-    height: 2px;
+    height: 3px;
     background-image: -webkit-gradient(linear, left top, right top, from(#f95c20), to(#49ef98));
     transition: width 500ms ease-in;
 
@@ -22,7 +23,7 @@
     }
 }
 
-@include b(loading-spin) {
+@include b(loading__spin) {
     width: 40px;
     animation: progress-rotate 1s linear infinite;
 
@@ -35,13 +36,8 @@
     }
 }
 
-@include b(loading-text) {
+@include b(loading__text) {
     
-}
-
-.z-loading-fade-enter,
-.z-loading-fade-leave-active {
-    opacity: 0;
 }
 
 @keyframes end {
@@ -70,5 +66,3 @@
     stroke-dashoffset: -120px;
   }
 }
-
-
