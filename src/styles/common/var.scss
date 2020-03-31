@@ -1,10 +1,10 @@
 /* color */
 // 所有色
-$--color-primary:#EC5382 !default;
-$--color-success: #0eda70 !default;
+$--color-primary:#ff4081 !default;
+$--color-success: #13c76a !default;
 $--color-info: #2ac1f9 !default;
 $--color-warning: #f79b0e !default;
-$--color-danger: #F56C6C !default;
+$--color-danger: rgb(241, 100, 100) !default;
 
 // 主色系
 $--color-primary-light-1: mix(#fff, $--color-primary, 10%) !default; /* 53a8ff */
@@ -36,18 +36,20 @@ $--color-text-placeholder: #C0C4CC !default;
 
 /* background */
 $--background-color-base: #F5F7FA !default;
+$--background-color-light: rgba(112, 111, 111, 0.1) !default;
 
 /* border */
 $--border-base: 1px solid #DCDFE6 !default;
 $--border-color-base: #DCDFE6 !default;
 $--border-color-light: #E4E7ED !default;
 $--border-color-lighter: #EBEEF5 !default;
-$--border-radius-base: 4px !default;
+$--border-radius-base: 2px !default;
 
 /* box-shadow */
 $--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
-$--box-shadow-dark: 0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px 0 rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05) !default;
-$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+$--box-shadow-lighter: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12) !default;
+$--box-shadow-darker: 0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px 0 rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05) !default;
+$--box-shadow-dark:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12) !default;
 
 /* font */
 $--font-size-extra-large: 20px !default;

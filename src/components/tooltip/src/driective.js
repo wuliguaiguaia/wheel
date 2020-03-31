@@ -28,8 +28,8 @@ const createTooltipDom = (el, binding) => {
 		const place = modifiers.find(item => ['top', 'bottom', 'left', 'right'].includes(item));
 		options.placement = place || 'bottom';
 	}
-    
-	modifiers.includes('canPaste') && (options.canPaste = false);
+	
+	!modifiers.includes('canPaste') && (options.canPaste = false);
 	options.content = value;
     
 	const instance = new constructor({
