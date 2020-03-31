@@ -1,0 +1,86 @@
+@import "../mixins/mixins";
+@import "../common/var";
+@import "../common/reset.scss";
+
+@include b(tooltip) {
+    position: absolute;
+    padding: 10px;
+    background: #2f2e2e;
+    color: #eaeaea;
+    z-index: 9999;
+    display: flow-root;
+    border-radius: $--border-radius-base;
+    line-height: 12px;
+    font-size: 12px;
+    transition: opacity 0.3s .2s;
+    box-shadow: $--box-shadow-dark;
+
+    & * {
+        line-height: 12px;
+        padding: 0;
+    }
+
+    &:before{
+        content: "";
+        position: absolute;
+    }
+
+    @include e(paste){
+        font-size: 12px;
+        color: $--color-primary;
+        margin-left: 12px;
+    }
+
+    @include m(top){
+        left: 50%;
+        top: calc(-100% - 5px);
+        transform: translateX(-50%);
+        &:before{
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top: 6px solid #333;
+        }
+    }
+
+    @include m(bottom){
+        left: 50%;
+        top: calc(100% + 10px);
+        transform: translateX(-50%);
+        &:before{
+            bottom: 100%;
+            left: 50%;
+            -webkit-transform: translate(-50%, 100%);
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-bottom: 6px solid #333;
+        }
+    }
+
+    @include m(left){
+        top: 50%;
+        right: calc(100% + 10px);
+        transform: translateY(-50%);
+        &:before{
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 5px solid transparent;
+            border-left: 6px solid #333;
+        }
+    }
+
+    @include m(right){
+        top: 50%;
+        left: calc(100% + 10px);
+        transform: translateY(-50%);
+        &:before{
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 5px solid transparent;
+            border-right: 6px solid #333;
+        }
+    }
+}

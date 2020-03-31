@@ -9,6 +9,7 @@ import RadioGroup from '../src/components/radio-group/index.js';
 import Cascader from '../src/components/cascader/index.js';
 import Loading from '../src/components/loading/index.js';
 import Message from '../src/components/message/index.js';
+import Tooltip from '../src/components/tooltip/index.js';
 
 const components = [
 	Button,
@@ -21,35 +22,37 @@ const components = [
 ];
 
 const install = function(Vue, opts = {}) {
-  components.forEach(component => {
-    Vue.component(component.name, component);
-  });
+	components.forEach(component => {
+		Vue.component(component.name, component);
+	});
 
-  Vue.use(Loading.directive);
+	Vue.use(Loading.directive);
+	Vue.use(Tooltip.directive);
 
-  Vue.prototype.$ELEMENT = {
-    size: opts.size || '',
-    zIndex: opts.zIndex || 2000
-  };
+	Vue.prototype.$ELEMENT = {
+		size: opts.size || '',
+		zIndex: opts.zIndex || 2000
+	};
 
-  Vue.prototype.$loading = Loading.service;
-  Vue.prototype.$message = Message.service;
+	Vue.prototype.$loading = Loading.service;
+	Vue.prototype.$message = Message.service;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
+	install(window.Vue);
 }
 
 export default {
-  version: '0.0.7',
-  install,
-  Button,
-  ButtonGroup,
-  Icon,
-  Input,
-  Radio,
-  RadioGroup,
-  Cascader,
-  Loading,
-  Message
+	version: '0.0.7',
+	install,
+	Button,
+	ButtonGroup,
+	Icon,
+	Input,
+	Radio,
+	RadioGroup,
+	Cascader,
+	Loading,
+	Message,
+	Tooltip
 };

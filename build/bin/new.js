@@ -1,4 +1,3 @@
-// 新增组件 eg. npm run new 测试组件 test
 if (!process.argv[2]) {
 	console.error('[组件名]必填 - Please enter new component name');
 	process.exit(1);

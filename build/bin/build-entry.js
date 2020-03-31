@@ -23,6 +23,7 @@ const install = function(Vue, opts = {}) {
   });
 
   Vue.use(Loading.directive);
+  Vue.use(Tooltip.directive);
 
   Vue.prototype.$ELEMENT = {
     size: opts.size || '',
@@ -59,7 +60,7 @@ ComponentNames.forEach(name => {
 			package: name
 		})
 	);
-	if (!['Loading', 'Message'].includes(componentName)){
+	if (!['Loading', 'Message', 'Tooltip'].includes(componentName)){
 		installTemplate.push(render(INSTALL_COMPONENT_TEMPLATE, {
 			name: componentName,
 			component: name

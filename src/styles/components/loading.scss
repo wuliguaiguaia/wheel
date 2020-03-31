@@ -15,7 +15,7 @@
 @include b(loading__bar) {
     width: 0%;
     height: 3px;
-    background-image: -webkit-gradient(linear, left top, right top, from(#f95c20), to(#49ef98));
+    background-image: -webkit-gradient(linear, left top, right top, from(#fa8252), to(#6aeeaa));
     transition: width 500ms ease-in;
 
     &.end {
