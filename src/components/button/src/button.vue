@@ -9,10 +9,10 @@
     <i :class="icon" v-if="icon && !loading"></i>
     <i class="el-icon-loading" v-if="loading"></i>
     <span v-if="$slots.default"><slot></slot></span>
-	<div v-if="animation === 'ripple' && radius" class="z-button__ripple center-absolute" >
-		<div class="circle center-absolute"  
-		v-show="showRipple" :style="rippleStyles"></div>
-	</div>
+	<span v-if="animation === 'ripple' && radius" class="z-button__ripple center-absolute" >
+		<span class="circle center-absolute"  
+		v-show="showRipple" :style="rippleStyles"></span>
+	</span>
 	<div v-if="animation === 'line'" class="z-button__line"></div>
   </button>
 </template>

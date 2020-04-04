@@ -16,6 +16,7 @@ $--color-primary-light-6: mix(#fff, $--color-primary, 60%) !default; /* b3d8ff *
 $--color-primary-light-7: mix(#fff, $--color-primary, 70%) !default; /* c6e2ff */
 $--color-primary-light-8: mix(#fff, $--color-primary, 80%) !default; /* d9ecff */
 $--color-primary-light-9: mix(#fff, $--color-primary, 90%) !default; /* ecf5ff */
+$--color-primary-dark: #c51162 !default;
 
 // 配色
 $--color-success-light: mix(#fff, $--color-success, 80%) !default;
@@ -36,14 +37,17 @@ $--color-text-placeholder: #C0C4CC !default;
 
 /* background */
 $--background-color-base: #F5F7FA !default;
-$--background-color-light: rgba(112, 111, 111, 0.1) !default;
+$--background-color-light: #ffffff !default;
+$--background-color-dark: rgba(112, 111, 111, 0.1) !default;
 
 /* border */
 $--border-base: 1px solid #DCDFE6 !default;
 $--border-color-base: #DCDFE6 !default;
 $--border-color-light: #E4E7ED !default;
-$--border-color-lighter: #EBEEF5 !default;
+$--border-color-lighter: rgba(0,0,0,.42) !default;
+$--border-color-dark: rgb(83, 81, 81) !default;
 $--border-radius-base: 2px !default;
+$--border-radius-strong: 4px !default;
 
 /* box-shadow */
 $--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
@@ -68,3 +72,9 @@ $--font-color-disabled-base: #bbb !default;
 /* icon */ 
 $--icon-color: #666 !default;
 $--icon-color-base: $--color-info !default;
+
+/* input */
+$--input-height-base: 36px !default; 
+$--input-padding-base: 6px 0 4px !default; 
+$--input-line-height-base: 20px !default;
+$--input-padding-base-normal: 7px 10px!default; 

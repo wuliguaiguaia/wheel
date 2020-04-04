@@ -18,8 +18,8 @@ function compile() {
 		.pipe(dest('../../lib/styles'));
 }
 
-// function copyfont() {
-// 	return src('./src/fonts/**').pipe(dest('./lib/fonts'));
-// }
+function copyfont() {
+	return src('./fonts/**').pipe(dest('../../lib/fonts'));
+}
 
-exports.build = series(compile);
+exports.build = series(compile, copyfont);

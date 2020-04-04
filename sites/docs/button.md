@@ -1,6 +1,6 @@
 ## Button
-
-    <z-button-group>
+	
+	<z-button-group>
 		<z-button>默认按钮</z-button>
 		<z-button type="primary" float>主要按钮</z-button>
 		<z-button type="success" float>成功按钮</z-button>
@@ -64,10 +64,11 @@
 	</z-button-group>
 
 	<z-button-group>
-		<z-button type="text" float>文字按钮</z-button>
+		<z-button type="text" float>浮动文字按钮</z-button>
 		<z-button type="text" animation="line">下划线文字按钮</z-button>
+		<z-button type="text">普通文字按钮</z-button>
 	</z-button-group>
 
 	<z-button-group>
-		<z-button plain :loading="true">加载按钮</z-button>
+		<z-button :loading="true">加载按钮</z-button>
 	</z-button-group>

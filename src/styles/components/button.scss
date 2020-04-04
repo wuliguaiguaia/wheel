@@ -8,9 +8,7 @@
   border-color: $color;
   background-color: $color;
 
-  &:hover,
-  &:focus,
-  &:active{
+  &:hover {
     outline: none;
     color: #fff;
     border-color: mix(#fff, $color, 30%);
@@ -19,8 +17,7 @@
 
   &.is-disabled {
     &,
-    &:hover,
-    &:focus{
+    &:hover{
         cursor: not-allowed;
         color: #fff;
         border-color: mix($color, #fff);
@@ -30,9 +27,7 @@
 
   &.is-float{
     box-shadow: $--box-shadow-lighter;
-    &:hover,
-    &:focus,
-    &:active{
+    &:hover {
       background: $color;
       border: 1px solid transparent;
       box-shadow: $--box-shadow-dark;
@@ -49,9 +44,7 @@
   border-color: mix(#fff, $color, 20%);
   background-color: mix(#fff, $color, 90%);
 
-  &:hover,
-  &:focus,
-  &:active{
+  &:hover{
     outline: none;
     color: #fff;
     border-color: $color;
@@ -59,8 +52,7 @@
   }
   &.is-disabled {
     &,
-    &:hover,
-    &:focus{
+    &:hover{
       cursor: not-allowed;
       color:mix($color, #fff, 60%);
       border-color: mix(#fff, $color, 60%);
@@ -113,9 +105,7 @@
     }
   }
 
-  &:hover,
-  &:focus,
-  &:active{
+  &:hover {
     outline: none;
     color: $--color-primary;
     border-color: $--color-primary-light-7;
@@ -132,7 +122,9 @@
     height: 100%;
     overflow: hidden;
     position: relative;
+    display: inline-block;
     .circle {
+      display: inline-block;
       background: rgba(255, 255, 255, 0.3);
       border-radius: 50%;
       animation: scale .4s ease-out;
@@ -140,9 +132,7 @@
   }
 
   @include when(plain){
-    &:hover,
-    &:active, 
-    &:focus {
+    &:hover {
       outline: none;
       background: #fff;
       border-color: $--color-primary-light-2;
@@ -151,15 +141,12 @@
   }
 
   @include when(disabled){
-    &,
-    &:hover,
-    &:focus{
+    & {
       cursor: not-allowed;
       color: $--color-text-secondary;
       border-color: $--border-color-base;
       background-color: #fff;
     }
-     
   }
   
   @include when(loading){
@@ -233,30 +220,27 @@
   }
 
   @include m(text){
-    color: $--color-primary;
+    color: #333;
     border-color: transparent;
     background-color: transparent;
+    padding: 0;
 
-    &:hover,
-    &:focus,
-    &:active{
+    &:hover {
       border-color: transparent;
       background: transparent;
       box-shadow: transparent;
     }
     
     &.is-float{
-      &:hover,
-      &:focus,
-      &:active{
-        background-color: $--background-color-light;
+      padding: 12px 20px;
+      &:hover {
+        background-color: $--background-color-dark;
       }
     }
 
     &.is-disabled{
       &,
-      &:hover,
-      &:focus{
+      &:hover{
         border-color: transparent;
       }
     }

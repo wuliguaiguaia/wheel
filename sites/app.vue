@@ -1,76 +1,45 @@
 <template>
-  <div id="app" style="height:200vw; margin:200px">
-	<z-button-group>
-		<z-button>默认按钮</z-button>
-		<z-button type="primary" float>主要按钮</z-button>
-		<z-button type="success" float>成功按钮</z-button>
-		<z-button type="info" float>信息按钮</z-button>
-		<z-button type="warning" float>警告按钮</z-button>
-		<z-button type="danger" float>危险按钮</z-button>
-	</z-button-group>
-	
-	<z-button-group>
-		<z-button plain>朴素按钮</z-button>
-		<z-button type="primary" plain>主要按钮</z-button>
-		<z-button type="success" plain>成功按钮</z-button>
-		<z-button type="info" plain>信息按钮</z-button>
-		<z-button type="warning" plain>警告按钮</z-button>
-		<z-button type="danger" plain>危险按钮</z-button>
-	</z-button-group>
+  <div id="app" style="height:200vw; margin:100px">
+	单行文本框：
+	<z-input type='text' v-model="value" autofocus placeholder="User Name"></z-input>
+	<z-input type='text' v-model="value" labelName="User Name" labelFix></z-input>
+	<z-input type='text' v-model="value" labelName="User Name" labelFloat></z-input>
 
-	<z-button-group>
-		<z-button round>圆角按钮</z-button>
-		<z-button type="primary" round float>主要按钮</z-button>
-		<z-button type="success" round float>成功按钮</z-button>
-		<z-button type="info" round float>信息按钮</z-button>
-		<z-button type="warning" round float>警告按钮</z-button>
-		<z-button type="danger" round float>危险按钮</z-button>
-	</z-button-group>
+	禁用：
+	<z-input type='text' v-model="value" placeholder="User Name" disabled></z-input>
 
-	<z-button-group>
-		<z-button :disabled="true">默认按钮</z-button>
-		<z-button type="primary" disabled>主要按钮</z-button>
-		<z-button type="success" disabled>成功按钮</z-button>
-		<z-button type="info" disabled>信息按钮</z-button>
-		<z-button type="warning" disabled>警告按钮</z-button>
-		<z-button type="danger" disabled>危险按钮</z-button>
-	</z-button-group>
+	多行文本框：
+	<z-input type='text' v-model="value" labelName="Message" multiple labelFloat></z-input>
 
-	<z-button-group>
-		<z-button icon="el-icon-search" circle float></z-button>
-		<z-button type="primary" icon="el-icon-edit" circle float></z-button>
-		<z-button type="success" icon="el-icon-check" circle float></z-button>
-		<z-button type="info" icon="el-icon-message" circle float></z-button>
-		<z-button type="warning" icon="el-icon-star-off" circle float></z-button>
-		<z-button type="danger" icon="el-icon-delete" circle float></z-button>
-	</z-button-group>
+	密码框：
+	<z-input type='password' v-model="value" placeholder="Password" showPassword></z-input>
 
-	<z-button-group>
-		<z-button v-tooltip.left="'按钮啦'">左tooltip</z-button>
-		<z-button v-tooltip.top="'按钮啦'">上tooltip</z-button>
-		<z-button v-tooltip.bottom="'按钮啦'">下tooltip</z-button>
-		<z-button v-tooltip.right="'按钮啦'">右tooltip</z-button>
-		<z-button v-tooltip.canPaste.right="'点复制试下'">可复制</z-button>
-	</z-button-group>
+	字数统计：
+	<z-input type='text' v-model="value" labelName="User Name" maxlength="20" labelFloat></z-input>
 
-	<z-button-group>
-	</z-button-group>
+	图标：
+	<z-input type='text' v-model="value" placeholder="Search" maxlength="20" prefix-icon="el-icon-search"></z-input>
+	<z-input type='text' v-model="value" labelName="Search" maxlength="20" suffix-icon="el-icon-search"></z-input>
 
-	<z-button-group>
-		<z-button type="primary">默认按钮</z-button>
-		<z-button type="primary" size="medium">中等按钮</z-button>
-		<z-button type="primary" size="small">小型按钮</z-button>
-		<z-button type="primary" size="mini">超小按钮</z-button>
-	</z-button-group>
+	可展开文本框：<br>
+	<div class="flex">
+		<i class="el-icon-search" @click="isExpand = true"></i>
+		<z-input type='text' v-model="value" placeholder="Search for ..." canExpand :isExpand="isExpand" @close ="isExpand = false" suffix-icon="el-icon-close"></z-input>
+	</div>
 
-	<z-button-group>
-		<z-button type="text" float>文字按钮</z-button>
-		<z-button type="text" animation="line">下划线文字按钮</z-button>
-	</z-button-group>
+	文字提示：
+	<z-input type='text' v-model="value" labelName="User Name" helperText="用户名已存在" showHelperText labelFloat></z-input>
 
-	<z-button-group>
-		<z-button plain :loading="true">加载按钮</z-button>
-	</z-button-group>
+	普通文本框:
+	<z-input type='text' v-model="value" placeholder="User Name" normal></z-input>
+	<z-input type='text' v-model="value" labelName="username" placeholder="User Name" normal></z-input>
+	<z-input type='text' v-model="value" placeholder="User Name" disabled normal></z-input>
+	<z-input type='text' v-model="value" placeholder="User Name" multiple normal></z-input>
+	<z-input type='password' v-model="value" placeholder="Password" normal></z-input>
+	<z-input type='text' v-model="value" placeholder="Search for ..." canExpand :isExpand="false" suffix-icon="el-icon-close" normal></z-input>
+	<z-input type='text' v-model="value" placeholder="User Name" helperText="用户名已存在" showHelperText normal></z-input>
+	<z-input type='text' v-model="value" placeholder="User Name" maxlength="20" normal></z-input>
+	<z-input type='text' v-model="value" placeholder="User Name" maxlength="20" suffix-icon="el-icon-edit" normal></z-input>
 
   </div>
 </template>
@@ -82,7 +51,9 @@ export default {
 		return {
 			loading: null,
 			message: null,
-			placement: 'right'
+			placement: 'right',
+			isExpand: false,
+			value: ''
 		};
 	},
 	created(){
@@ -101,5 +72,8 @@ export default {
 <style lang="scss">
 .z-button-group{
 	margin: 10px;
+}
+.z-input {
+	margin-bottom: 30px;
 }
 </style>

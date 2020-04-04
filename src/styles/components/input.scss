@@ -2,4 +2,123 @@
 @import "../common/var";
 
 @include b(input) {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    color: $--color-text-primary;
+    font-size: $--font-size-medium;
+    cursor: pointer;
+    
+    @include e(label){
+        font-size: 12px;
+        color: $--color-text-regular;
+        transition: all ease .3s;
+        display: inline-block;
+        
+        @include when(focus){
+            color: $--color-primary-dark;
+        }
+    }
+
+    @include e(default multiple){
+        padding: $--input-padding-base;
+        width: 100%;
+        line-height: $--input-line-height-base;
+        border: none;
+        // height: $--input-height-base;
+        border-bottom: 1px solid $--border-color-dark;
+        transition: all ease .3s;
+        font-size: $--font-size-medium;
+        flex: 1;
+        &::placeholder{
+            color: $--color-text-placeholder;
+        }
+
+        &:hover{
+            border-color: $--border-color-dark;
+            box-shadow: 0 1px 0 0 $--border-color-dark;
+        }
+        
+        &:focus{
+            border-color: $--color-primary-dark;
+            box-shadow: 0 1px 0 0 $--color-primary-dark;
+        }
+
+        @include when(normal){
+            border: 1px solid transparent;
+            box-shadow: none;
+            padding: $--input-padding-base-normal;
+            background-color: $--background-color-base;
+            border-radius: $--border-radius-base;
+        }
+    }
+
+    @include when(expand){
+        transition: all ease-in-out .3s;
+        // animation: slide ease-in-out .3s forwards;
+    }
+
+    @include e(before){
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+    }
+
+    @include e(end){
+        position: absolute;
+        right: 0;
+        bottom: 4px;
+    }
+
+    @include e(helperText){
+        font-size: $--font-size-extra-small;
+    }
+    
+    @include e(limit){
+        justify-self: flex-end;
+        font-size: $--font-size-extra-small;
+    }
+    
+    @include e(under){
+        position: absolute;
+        font-size: $--font-size-extra-small;
+        width: 100%;
+        bottom: -20px;
+    }
+
+    @include when(under){
+        margin-bottom: 20px;
+    }
+
+    @include when(disabled){
+        & > * {
+            &:hover{
+                cursor: not-allowed;
+                box-shadow: none;
+            }
+        }
+    }
+    
+    @include when(prefix){
+        .z-input__default {
+            padding-left: calc(1em + 3px);
+        }
+    }
+    
+    @include when(suffix){
+        .z-input__default {
+            padding-right: calc(1em + 3px);
+        }
+    }
+
+    @include when(disabled){
+
+    }
 }
+
+.show-slide-enter, .show-slide-leave-active {
+    width: 0;
+    opacity: 0;
+}
+
+
