@@ -1,4 +1,6 @@
 ## Input
+# todo
+- 普通类型样式调整
 
 <template>
   <div id="app" style="height:200vw; margin:100px">

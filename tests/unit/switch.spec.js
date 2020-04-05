@@ -1,15 +1,15 @@
 import { destroyVM, createTest } from './utils';
-import Message from '@/components/message';
+import Switch from '@/components/switch';
 import { expect } from 'chai';
 
-describe('Message', () => {
+describe('Switch', () => {
 	let vm;
 	afterEach(() => {
 		destroyVM(vm);
 	});
 
 	it('create', () => {
-		vm = createTest(Message);
+		vm = createTest(Switch);
 		expect(vm.$el).to.exist;
 	});
 });

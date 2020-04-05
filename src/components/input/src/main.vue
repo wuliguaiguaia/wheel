@@ -41,7 +41,6 @@
 				ref="input"
 				v-bind="$attrs"
 				:disabled="disabled"
-				:style="textareaStyle"
 				:placeholder="!labelName && placeholder"
 				@click="hanleInputClick"
 				@input="handleInput"
@@ -139,11 +138,6 @@ export default {
 		}
 	},
 	watch: {
-		// value (val) {
-		// 	if(this.type === 'password' && val){
-		// 		this.showPasssword = true;
-		// 	}
-		// },
 		labelFix: {
 			handler (val) {
 				this.floating = val;

@@ -26,11 +26,11 @@
   }
 
   &.is-float{
-    box-shadow: $--box-shadow-lighter;
+    box-shadow: $--bs-light;
     &:hover {
       background: $color;
       border: 1px solid transparent;
-      box-shadow: $--box-shadow-dark;
+      box-shadow: $--bs-dark;
     }
   }
 
@@ -234,7 +234,7 @@
     &.is-float{
       padding: 12px 20px;
       &:hover {
-        background-color: $--background-color-dark;
+        background-color: $--bg-darker;
       }
     }
 

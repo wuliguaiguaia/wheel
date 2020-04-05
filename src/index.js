@@ -10,6 +10,7 @@ import Cascader from '../src/components/cascader/index.js';
 import Loading from '../src/components/loading/index.js';
 import Message from '../src/components/message/index.js';
 import Tooltip from '../src/components/tooltip/index.js';
+import Switch from '../src/components/switch/index.js';
 
 const components = [
 	Button,
@@ -19,6 +20,7 @@ const components = [
 	Radio,
 	RadioGroup,
 	Cascader,
+	Switch,
 ];
 
 const install = function(Vue, opts = {}) {
@@ -54,5 +56,6 @@ export default {
   Cascader,
   Loading,
   Message,
-  Tooltip
+  Tooltip,
+  Switch
 };

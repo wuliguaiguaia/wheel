@@ -1,5 +1,40 @@
-/* color */
-// 所有色
+/* 变量约定
+    公共：$--[key]-[修饰符]
+    组件：$--[block]-[key]
+         $--[block]-[element]-[key]
+         $--[block]-[modifier]-[key]
+         $--[block]-[status]-[key]
+*/ 
+
+/* 修饰符约定：
+    颜色：primary success info warning danger
+        除默认可选四个 light lighter dark darker
+*/ 
+
+/* Alias
+    w: width
+    h: height
+    bg: background-color
+    fz: font-size
+    fw: font-weight
+    lh: line-height
+    b: border
+    bc: border-color
+    bw: border-width
+    br: border-radius
+    bs: box-shadow
+    p: padding
+    ph: padding 水平
+    pv: padding 垂直
+    m: margin
+    mh: margin 水平
+    mv: margin 垂直
+*/ 
+
+/* !default sass给var提供默认值 */
+
+/* color */ 
+// 所有色 
 $--color-primary:#ff4081 !default;
 $--color-success: #13c76a !default;
 $--color-info: #2ac1f9 !default;
@@ -16,6 +51,8 @@ $--color-primary-light-6: mix(#fff, $--color-primary, 60%) !default; /* b3d8ff *
 $--color-primary-light-7: mix(#fff, $--color-primary, 70%) !default; /* c6e2ff */
 $--color-primary-light-8: mix(#fff, $--color-primary, 80%) !default; /* d9ecff */
 $--color-primary-light-9: mix(#fff, $--color-primary, 90%) !default; /* ecf5ff */
+$--color-primary-light: #f5a8c0 !default;
+$--color-primary-light-O: rgba(249, 147, 179, 0.28) !default;
 $--color-primary-dark: #c51162 !default;
 
 // 配色
@@ -36,9 +73,11 @@ $--color-text-secondary: #909399 !default;
 $--color-text-placeholder: #C0C4CC !default;
 
 /* background */
-$--background-color-base: #F5F7FA !default;
+$--bg-lighter: #fafafa !default;
+$--bg-light: #F5F7FA !default;
 $--background-color-light: #ffffff !default;
-$--background-color-dark: rgba(112, 111, 111, 0.1) !default;
+$--bg-darker: rgba(112, 111, 111, 0.1) !default;
+$--bg-dark: rgba(0,0,0,.38) !default;
 
 /* border */
 $--border-base: 1px solid #DCDFE6 !default;
@@ -50,10 +89,10 @@ $--border-radius-base: 2px !default;
 $--border-radius-strong: 4px !default;
 
 /* box-shadow */
-$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
-$--box-shadow-lighter: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12) !default;
-$--box-shadow-darker: 0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px 0 rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05) !default;
-$--box-shadow-dark:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12) !default;
+$--bs-light: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12) !default;
+$--bs-lighter: 1px 1px 3px 0px rgba(0, 0, 0, 0.1) !default;
+$--bs-darker: 0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px 0 rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05) !default;
+$--bs-dark:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12) !default;
 
 /* font */
 $--font-size-extra-large: 20px !default;
@@ -73,8 +112,26 @@ $--font-color-disabled-base: #bbb !default;
 $--icon-color: #666 !default;
 $--icon-color-base: $--color-info !default;
 
+/*****************TODO: 组件的样式尽可能从上面取值 *****************/ 
+
 /* input */
 $--input-height-base: 36px !default; 
 $--input-padding-base: 6px 0 4px !default; 
 $--input-line-height-base: 20px !default;
 $--input-padding-base-normal: 7px 10px!default; 
+
+/* switch */
+$--switch-w: 36px !default;
+$--switch-h: 14px !default;
+$--switch-button-w: 20px !default;
+$--switch-br: 14px !default;
+$--switch-off-bg: rgba(0,0,0,.38) !default;
+$--switch-button-off-bg: #fff !default;
+$--switch-button-off-bs: rgba(0,0,0,.12) !default;
+$--switch-disabled-bg: rgba(0,0,0,.12) !default;
+$--switch-button-disabled-bg: rgba(0,0,0,.12) !default;
+
+$--switch-normal-w: 40px !default;
+$--switch-normal-h: 18px !default;
+$--switch-normal-button-w: 14px !default;
+$--switch-normal-br: 14px !default;

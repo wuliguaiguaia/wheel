@@ -15,8 +15,10 @@
     }
 
     @at-root {
-        #{$currentSelector} {
-            @content;
+        #{$selector} {
+            #{$currentSelector} {
+                @content;
+            }
         }
     }
 }

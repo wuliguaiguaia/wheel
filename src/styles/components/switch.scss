@@ -1,0 +1,115 @@
+@import "../mixins/mixins";
+@import "../common/var";
+@import "../common/reset.scss";
+@import "../common/transition.scss";
+
+@include b(switch) {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    
+    @include e(inner){
+        display: inline-block;
+        position: relative;
+        width: $--switch-w;
+        height: $--switch-h;
+        border-radius: $--switch-br;
+        background-color: $--bg-dark;
+        font-size: 12px;
+        color: #fff;
+        transition: all ease-in-out .2s;
+        
+        @include e(slide){
+            position: absolute;
+            left: 0%;
+            top: 50%;
+            transform: translate(-30%,-50%);
+            width: $--switch-button-w;
+            height: $--switch-button-w;
+            line-height: $--switch-button-w;
+            background-color:  $--bg-lighter;
+            border-radius: 100%;
+            box-shadow: $--bs-light;
+            transition: all ease-in-out .2s;
+            
+            &:focus{
+                box-shadow: 0 0 0px 17px rgba(0,0,0,.07);
+                outline: none;
+            }
+        }
+
+        @include e(inside-text){
+            position: absolute;
+            left: 7px;
+            transition: all ease .3s;
+            
+            @include m(right){
+                position: absolute;
+                right: 7px;
+                transition: all ease .3s;
+            }
+        }
+    }
+
+    @include m(normal){
+        @include e(inner) {
+            width: $--switch-normal-w;
+            height: $--switch-normal-h;
+            border-radius: $--switch-normal-br;
+            background-color: $--bg-dark;
+
+            @include e(slide){
+                width: $--switch-normal-button-w;
+                height: $--switch-normal-button-w;
+                line-height: $--switch-normal-button-w;
+                background-color:  $--bg-light;
+                transform: translate(2px, -50%);
+                box-shadow: none;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            @include when(active){
+                background-color: $--color-primary;
+                .z-switch__slide{
+                    width: $--switch-normal-button-w;
+                    height: $--switch-normal-button-w;
+                    line-height: $--switch-normal-button-w;
+                    background-color:  #fff;
+                    transform: translate(calc( -100% - 2px), -50%);
+                    
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    @include e(label) {
+        margin-left: 12px;
+        vertical-align: 3px;
+    }
+
+    @include when(active) {
+        @include e(inner){
+            background-color: $--color-primary-light;
+            @include e(slide) {
+                left: 100%;
+                top: 50%;
+                transform: translate(-60%, -50%);
+                background-color:  $--color-primary;
+                
+                &:focus{
+                    box-shadow: 0 0 0px 17px $--color-primary-light-O;
+                }
+            }
+        }
+    }
+
+    @include when(disabled){
+
+    }
+}
