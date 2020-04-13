@@ -1,4 +1,4 @@
-@import "../mixins/mixins";
+@import "../mixins/bem";
 @import "../common/var";
 @import "../common/reset.scss";
 
@@ -9,7 +9,7 @@
     color: #eaeaea;
     z-index: 9999;
     display: flow-root;
-    border-radius: $--border-radius-base;
+    border-radius: $--br-base;
     line-height: 12px;
     font-size: 12px;
     transition: opacity 0.3s .2s;

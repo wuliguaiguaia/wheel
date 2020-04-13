@@ -68,7 +68,7 @@ describe('${ComponentName}', () => {
 			'../../../src/styles/components',
 			`${componentname}.scss`
 		),
-		content: `@import "../mixins/mixins";
+		content: `@import "../mixins/bem";
 @import "../common/var";
 @import "../common/reset.scss";
 

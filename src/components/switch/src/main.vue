@@ -1,17 +1,14 @@
 <template>
-  <div :class="classes"
-    @click="switchValue"
-  >
-    <span class="z-switch__inner">
-      <transition name="fade">
-        <span v-if="insideText" v-show="active" class="z-switch__inside-text">{{activeText}}</span>
-      </transition>
+  <div :class="classes">
+   <div class="wrapper" @click="switchValue">
+    <span :class="['z-switch__inner', active && 'is-active']">
       <span class="z-switch__slide" ref="slide" tabindex="0"></span>
       <transition name="fade">
-        <span v-if="insideText" v-show="!active" class="z-switch__inside-text--right">{{inactiveText}}</span>
+        <span v-if="insideText" class="z-switch__inside-text">{{active? activeText : inactiveText}}</span>
       </transition>
     </span>
     <span v-if="!insideText" class="z-switch__label">{{curText}}</span>
+   </div>
   </div>
 </template>
 
@@ -50,7 +47,6 @@ export default {
 				'z-switch',
 				this.normal && 'z-switch--normal',
 				this.disabled && 'is-disabled',
-				this.active && 'is-active'
 			];
 		},
 		checked () {

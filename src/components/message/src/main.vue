@@ -35,12 +35,9 @@ export default {
 		},
 		typeClass () {
 			return [
-				this.type === 'info'&& 'el-icon-info',
-				this.type === 'success'&& 'el-icon-success',
-				this.type === 'warning'&& 'el-icon-warning',
-				this.type === 'error'&& 'el-icon-error',
-				this.type === 'loading'&& 'el-icon-loading',
-				this.type && 'z-message__icon'
+				this.type && `el-icon-${this.type}`,
+				this.type && 'z-message__icon',
+				this.type === 'loading' && 'el-icon__loading'
 			];
 		}
 	},

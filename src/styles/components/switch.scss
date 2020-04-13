@@ -1,4 +1,4 @@
-@import "../mixins/mixins";
+@import "../mixins/bem";
 @import "../common/var";
 @import "../common/reset.scss";
 @import "../common/transition.scss";
@@ -11,58 +11,67 @@
     @include e(inner){
         display: inline-block;
         position: relative;
-        width: $--switch-w;
-        height: $--switch-h;
-        border-radius: $--switch-br;
-        background-color: $--bg-dark;
+        width: $switch-w;
+        height: $switch-h;
+        border-radius: $switch-br;
+        background-color: $switch-bg;
         font-size: 12px;
         color: #fff;
         transition: all ease-in-out .2s;
         
         @include e(slide){
             position: absolute;
-            left: 0%;
+            left: 0;
             top: 50%;
             transform: translate(-30%,-50%);
-            width: $--switch-button-w;
-            height: $--switch-button-w;
-            line-height: $--switch-button-w;
-            background-color:  $--bg-lighter;
+            width: $switch__button-w;
+            height: $switch__button-w;
+            line-height: $switch__button-w;
+            background-color:  $switch__button-bg;
             border-radius: 100%;
-            box-shadow: $--bs-light;
+            box-shadow: $--bs-base;
             transition: all ease-in-out .2s;
             
             &:focus{
-                box-shadow: 0 0 0px 17px rgba(0,0,0,.07);
+                box-shadow: $--bs-base, 0 0 0px 17px rgba(0,0,0,.07);
                 outline: none;
             }
         }
 
-        @include e(inside-text){
-            position: absolute;
-            left: 7px;
-            transition: all ease .3s;
-            
-            @include m(right){
+        @include when(active) {
+            background-color: $--color-primary-light;
+            @include e(slide) {
+                left: 100%;
+                top: 50%;
+                transform: translate(-60%, -50%);
+                background-color:  $--color-primary;
+                box-shadow: $--bs-base,;
+                
+                &:focus{
+                    box-shadow: $--bs-base, 0 0 0px 17px $--color-primary-lighter;
+                }
+            }
+
+            @include e(inside-text){
                 position: absolute;
-                right: 7px;
+                left: 7px;
                 transition: all ease .3s;
             }
-        }
+       }
     }
 
     @include m(normal){
         @include e(inner) {
-            width: $--switch-normal-w;
-            height: $--switch-normal-h;
-            border-radius: $--switch-normal-br;
-            background-color: $--bg-dark;
+            width: $switch-normal-w;
+            height: $switch-normal-h;
+            border-radius: $switch-br;
+            background-color: rgba(0,0,0,.38);
 
             @include e(slide){
-                width: $--switch-normal-button-w;
-                height: $--switch-normal-button-w;
-                line-height: $--switch-normal-button-w;
-                background-color:  $--bg-light;
+                width: $switch-normal-button-w;
+                height: $switch-normal-button-w;
+                line-height: $switch-normal-button-w;
+                background-color:$switch__button-bg;
                 transform: translate(2px, -50%);
                 box-shadow: none;
 
@@ -74,10 +83,10 @@
             @include when(active){
                 background-color: $--color-primary;
                 .z-switch__slide{
-                    width: $--switch-normal-button-w;
-                    height: $--switch-normal-button-w;
-                    line-height: $--switch-normal-button-w;
-                    background-color:  #fff;
+                    width: $switch-normal-button-w;
+                    height: $switch-normal-button-w;
+                    line-height: $switch-normal-button-w;
+                    background-color: $switch__button-bg;
                     transform: translate(calc( -100% - 2px), -50%);
                     
                     &:focus {
@@ -93,23 +102,22 @@
         vertical-align: 3px;
     }
 
-    @include when(active) {
-        @include e(inner){
-            background-color: $--color-primary-light;
-            @include e(slide) {
-                left: 100%;
-                top: 50%;
-                transform: translate(-60%, -50%);
-                background-color:  $--color-primary;
-                
-                &:focus{
-                    box-shadow: 0 0 0px 17px $--color-primary-light-O;
-                }
-            }
-        }
+    @include e(inside-text){
+        position: absolute;
+        right: 7px;
+        transition: all ease .3s;
     }
 
     @include when(disabled){
-
+        cursor: not-allowed;
+        .wrapper{
+            pointer-events: none;
+        }
+        @include e(inner) {
+            background-color: $switch-disabled-bg;
+            @include e(slide){
+                background-color: $switch__button-disabled-bg;
+            }
+        }
     }
 }

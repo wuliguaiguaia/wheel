@@ -1,62 +1,80 @@
 
 @import '../common/var';
-@import '../mixins/mixins';
+@import '../mixins/bem';
+@import '../common/animation';
 
-/*******************************************************/ 
+/*************************  utils start ******************************/ 
 @mixin button-variant($color){
   color: #fff;
-  border-color: $color;
   background-color: $color;
+
+  @if $color == #fff { color: $--fc-base }
 
   &:hover {
     outline: none;
     color: #fff;
-    border-color: mix(#fff, $color, 30%);
     background-color: mix(#fff, $color, 30%) ;
+    @if $color == #fff { 
+      color: $--fc-base;
+      background-color: $--bg-light;
+    }
   }
 
   &.is-disabled {
     &,
     &:hover{
-        cursor: not-allowed;
-        color: #fff;
-        border-color: mix($color, #fff);
-        background-color: mix($color, #fff);
-    }
-  }
-
-  &.is-float{
-    box-shadow: $--bs-light;
-    &:hover {
-      background: $color;
-      border: 1px solid transparent;
-      box-shadow: $--bs-dark;
+      cursor: not-allowed;
+      color: #fff;
+      background-color: mix($color, #fff);
+      @if $color == #fff { 
+        color: $--fc-holder;
+        background-color: $--bg-light;
+      }
     }
   }
 
   &.is-plain {
     @include button-plain($color);
   }
+
+  &.is-float {
+    box-shadow: $--bs-base;
+    &:hover {
+      background-color: $color;
+      box-shadow: $--bs-dark;
+      @if $color == #fff { 
+        background-color: $--bg-light;
+      }
+    }
+  }
 }
 
 @mixin button-plain($color) {
   color: $color;
-  border-color: mix(#fff, $color, 20%);
   background-color: mix(#fff, $color, 90%);
-
+  @if $color == #fff { 
+    color: $--fc-base; 
+    box-shadow: 0 0 1px #999 inset;
+  };
+  
   &:hover{
     outline: none;
     color: #fff;
-    border-color: $color;
     background-color: $color;
+    @if $color == #fff { 
+      color: $--fc-base;
+      box-shadow: none;
+      background-color: $--bg-light;
+    }
   }
+
   &.is-disabled {
     &,
     &:hover{
       cursor: not-allowed;
       color:mix($color, #fff, 60%);
-      border-color: mix(#fff, $color, 60%);
       background-color: mix(#fff, $color, 80%);
+      @if $color == #fff { color: $--fc-base };
     }
   }
 }
@@ -70,16 +88,16 @@
     padding: $vertical-padding;
   }
 }
-/*******************************************************/
+/*************************  utils end ******************************/ 
+
 
 @include b(button) {
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
   background: #fff;
-  border: $--border-base;
-  border-color: $--border-color-base;
-  color: $--color-text-regular;
+  border: 1px solid $--bc-base;
+  color: $--fc-regular;
   -webkit-appearance: none;
   text-align: center;
   box-sizing: border-box;
@@ -89,17 +107,13 @@
   font-weight: normal;
   user-select: none;
   padding: 12px 20px;
-  font-size: $--font-size-base;
-  border-radius: $--border-radius-base;
+  font-size: 14px;
+  border-radius: $--br-base;
   position: relative;
   cursor: pointer;
-
-  & + & {
-    margin-left: 10px;
-  }
+  border: none;
 
   & [class*="icon-"]{
-    vertical-align: middle;
     & + span {
       margin-left: 5px;
     }
@@ -108,8 +122,7 @@
   &:hover {
     outline: none;
     color: $--color-primary;
-    border-color: $--color-primary-light-7;
-    background-color: $--color-primary-light-9;
+    background-color: mix(#fff, $--color-primary, 90%);
   }
   
   // firefox 蓝色边框
@@ -117,35 +130,17 @@
     border: 0;
   }
 
-  @include e(ripple){
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    .circle {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      animation: scale .4s ease-out;
-    }
-  }
-
   @include when(plain){
     &:hover {
       outline: none;
       background: #fff;
-      border-color: $--color-primary-light-2;
-      color: $--color-text-regular;
+      color: $--fc-regular;
     }
   }
 
   @include when(disabled){
     & {
       cursor: not-allowed;
-      color: $--color-text-secondary;
-      border-color: $--border-color-base;
-      background-color: #fff;
     }
   }
   
@@ -163,27 +158,8 @@
     padding: 12px;
   }
 
-  @include e(line){
-    width: 100%;
-    height: 1px;
-    background: $--color-primary;
-    margin-top: 3px;
-    transform: scaleX(0);
-    transition: transform .2s ease-in-out;
-  }
-
-  @include when(line){
-    &:hover {
-      .z-button__line{
-        transform: scaleX(1)
-      }
-    }
-  }
-
   @include m(default){
-    .circle {
-      background: rgba($color: #000000, $alpha: 0.1);
-    }
+    @include button-variant(#fff)
   }
 
   @include m(primary){
@@ -219,29 +195,58 @@
     @include button-size(7px, 15px, 12px, 2px)
   }
 
+  @include when(ripple){
+    overflow: hidden;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      left: 50%;
+      top: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scaleX(0);
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    &:focus {
+      &::before {
+        animation: scale 1.7s ease-out backwards;
+      }
+    }
+  }
+
   @include m(text){
     color: #333;
-    border-color: transparent;
     background-color: transparent;
     padding: 0;
 
     &:hover {
-      border-color: transparent;
-      background: transparent;
-      box-shadow: transparent;
-    }
-    
-    &.is-float{
-      padding: 12px 20px;
-      &:hover {
-        background-color: $--bg-darker;
-      }
+      background-color: transparent;
     }
 
-    &.is-disabled{
-      &,
-      &:hover{
-        border-color: transparent;
+    &.is-line {
+      transition: color .2s .1s;
+      &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 1px;
+        transform: scaleX(0);
+        background-color: $--color-primary;
+        transition: transform .2s ease-in-out;
+      }
+      
+      &:hover {
+        &::before{
+          transform: scaleX(1);
+        }
+      }
+      &:focus {
+        &::before {
+          transform: scaleX(0);
+        }
       }
     }
   }
@@ -250,20 +255,4 @@
 .icon-loading{
   display: inline-block;
   animation: rotate 1s linear infinite;
-}
-
-@keyframes rotate {
-  from {transform: rotate(0deg)}
-  to {transform: rotate(-360deg)}
-}
-
-@keyframes scale {
-  from { 
-    transform: translate(-50%,-50%) scale(0);
-    opacity: 1;
-  }
-  to { 
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0;
-  }
 }

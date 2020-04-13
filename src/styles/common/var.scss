@@ -1,14 +1,15 @@
 /* 变量约定
     公共：$--[key]-[修饰符]
-    组件：$--[block]-[key]
-         $--[block]-[element]-[key]
-         $--[block]-[modifier]-[key]
-         $--[block]-[status]-[key]
+    组件：$[block]-key;   
+         $[block]__[element]-[key];
+         $[block]__[element]-[status]-[key];
+         $[block]__[element]--[modifier]-[key];  
 */ 
 
 /* 修饰符约定：
-    颜色：primary success info warning danger
-        除默认可选四个 light lighter dark darker
+    颜色：primary success info warning danger 
+    其他：base表默认，其他程度可分为四级 light lighter dark darker
+        （还有一些具有样式特性的）
 */ 
 
 /* Alias
@@ -31,107 +32,78 @@
     mv: margin 垂直
 */ 
 
-/* !default sass给var提供默认值 */
-
+/**************************  global  **************************/ 
 /* color */ 
-// 所有色 
-$--color-primary:#ff4081 !default;
-$--color-success: #13c76a !default;
-$--color-info: #2ac1f9 !default;
-$--color-warning: #f79b0e !default;
-$--color-danger: rgb(241, 100, 100) !default;
+$--color-primary:#FF4081;
+$--color-success: #67C23A;
+$--color-info: #409EFF;
+$--color-warning: #E6A23C;
+$--color-danger: #F56C6C;
 
-// 主色系
-$--color-primary-light-1: mix(#fff, $--color-primary, 10%) !default; /* 53a8ff */
-$--color-primary-light-2: mix(#fff, $--color-primary, 20%) !default; /* 66b1ff */
-$--color-primary-light-3: mix(#fff, $--color-primary, 30%) !default; /* 79bbff */
-$--color-primary-light-4: mix(#fff, $--color-primary, 40%) !default; /* 8cc5ff */
-$--color-primary-light-5: mix(#fff, $--color-primary, 50%) !default; /* a0cfff */
-$--color-primary-light-6: mix(#fff, $--color-primary, 60%) !default; /* b3d8ff */
-$--color-primary-light-7: mix(#fff, $--color-primary, 70%) !default; /* c6e2ff */
-$--color-primary-light-8: mix(#fff, $--color-primary, 80%) !default; /* d9ecff */
-$--color-primary-light-9: mix(#fff, $--color-primary, 90%) !default; /* ecf5ff */
-$--color-primary-light: #f5a8c0 !default;
-$--color-primary-light-O: rgba(249, 147, 179, 0.28) !default;
-$--color-primary-dark: #c51162 !default;
+$--color-primary-lighter: #f7649529;
+$--color-primary-light: #ff408180;
+$--color-primary-dark: #ca055e;
 
-// 配色
-$--color-success-light: mix(#fff, $--color-success, 80%) !default;
-$--color-warning-light: mix(#fff, $--color-warning, 80%) !default;
-$--color-danger-light: mix(#fff, $--color-danger, 80%) !default;
-$--color-info-light: mix(#fff, $--color-info, 80%) !default;
+/* font-color */ 
+$--fc-base: #303133;
+$--fc-regular: #606266;
+$--fc-light: #909399;
+$--fc-holder: #C0C4CC;
 
-$--color-success-lighter: mix(#fff, $--color-success, 90%) !default;
-$--color-warning-lighter: mix(#fff, $--color-warning, 90%) !default;
-$--color-danger-lighter: mix(#fff, $--color-danger, 90%) !default;
-$--color-info-lighter: mix(#fff, $--color-info, 90%) !default;
-
-// 文本色
-$--color-text-primary: #303133 !default;
-$--color-text-regular: #606266 !default;
-$--color-text-secondary: #909399 !default;
-$--color-text-placeholder: #C0C4CC !default;
+/* gradient-color */ 
+$--gradient-grey: linear-gradient(to right, #bdc3c7, #2c3e50);
+$--gradient-candy: linear-gradient(to right,#D3959B, #BFE6BA);
 
 /* background */
-$--bg-lighter: #fafafa !default;
-$--bg-light: #F5F7FA !default;
-$--background-color-light: #ffffff !default;
-$--bg-darker: rgba(112, 111, 111, 0.1) !default;
-$--bg-dark: rgba(0,0,0,.38) !default;
+$--bg-base: #FAFAFA;
+$--bg-light: rgba(0,0,0,.1);
 
-/* border */
-$--border-base: 1px solid #DCDFE6 !default;
-$--border-color-base: #DCDFE6 !default;
-$--border-color-light: #E4E7ED !default;
-$--border-color-lighter: rgba(0,0,0,.42) !default;
-$--border-color-dark: rgb(83, 81, 81) !default;
-$--border-radius-base: 2px !default;
-$--border-radius-strong: 4px !default;
+/* border/radius */
+$--bc-base: #DCDFE6;
+$--br-base: 2px;
 
 /* box-shadow */
-$--bs-light: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12) !default;
-$--bs-lighter: 1px 1px 3px 0px rgba(0, 0, 0, 0.1) !default;
-$--bs-darker: 0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px 0 rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05) !default;
-$--bs-dark:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12) !default;
+$--bs-base: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+$--bs-dark: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+$--bs-spread: 0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px 0 rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05);
 
 /* font */
-$--font-size-extra-large: 20px !default;
-$--font-size-large: 18px !default;
-$--font-size-medium: 16px !default;
-$--font-size-base: 14px !default;
-$--font-size-small: 13px !default;
-$--font-size-extra-small: 12px !default;
-
-$--font-weight-primary: 500 !default;
-$--font-weight-secondary: 100 !default;
-$--font-line-height-primary: 24px !default;
-$--font-line-height-secondary: 16px !default;
-$--font-color-disabled-base: #bbb !default;
+$--fz-20: 20px;
+$--fz-18: 18px;
+$--fz-16: 16px;
+$--fz-14: 14px;
+$--fz-12: 12px;
+$--fw-base: 400;
+$--fw-medium: 500;
+$--fw-bold: 700;
 
 /* icon */ 
-$--icon-color: #666 !default;
-$--icon-color-base: $--color-info !default;
+$icon-color: #666;
 
-/*****************TODO: 组件的样式尽可能从上面取值 *****************/ 
+/**************************  components  **************************/ 
+
+/* button */
 
 /* input */
-$--input-height-base: 36px !default; 
-$--input-padding-base: 6px 0 4px !default; 
-$--input-line-height-base: 20px !default;
-$--input-padding-base-normal: 7px 10px!default; 
+$input-p: 6px 0 4px; 
+$input-lh: 20px;
+$input--normal-p: 7px 10px; 
 
 /* switch */
-$--switch-w: 36px !default;
-$--switch-h: 14px !default;
-$--switch-button-w: 20px !default;
-$--switch-br: 14px !default;
-$--switch-off-bg: rgba(0,0,0,.38) !default;
-$--switch-button-off-bg: #fff !default;
-$--switch-button-off-bs: rgba(0,0,0,.12) !default;
-$--switch-disabled-bg: rgba(0,0,0,.12) !default;
-$--switch-button-disabled-bg: rgba(0,0,0,.12) !default;
+$switch-w: 36px;
+$switch-h: 14px;
+$switch-br: 14px;
+$switch-bg: rgba(0,0,0,.38);
+$switch__button-w: 20px;
+$switch__button-bg: $--bg-base;
+$switch-disabled-bg:rgba(0,0,0,.12);
+$switch__button-disabled-bg: #bdbdbd; 
 
-$--switch-normal-w: 40px !default;
-$--switch-normal-h: 18px !default;
-$--switch-normal-button-w: 14px !default;
-$--switch-normal-br: 14px !default;
+$switch-normal-w: 40px;
+$switch-normal-h: 18px;
+$switch-normal-button-w: 14px;
+$switch-normal-br: 14px;
+
+/* loading */
+$loading-w: 20px; 
+$loading-bg: $--color-success;

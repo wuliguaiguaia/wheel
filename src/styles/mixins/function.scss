@@ -1,0 +1,43 @@
+@import "config";
+
+@function selectorToString($selector) {
+  $selector: inspect($selector); // 转为字符串
+  $selector: str-slice($selector, 2, -2);
+  @return $selector;
+}
+
+@function containsModifier($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, $modifier-separator) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function containWhenFlag($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, '.' + $state-prefix) {
+    @return true
+  } @else {
+    @return false
+  }
+}
+
+@function containPseudoClass($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, ':') {
+    @return true
+  } @else {
+    @return false
+  }
+}
+
+
+/* 有修饰符 or 有状态 or 有伪元素*/ 
+@function hitAllSpecialNestRule($selector) {
+  @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}

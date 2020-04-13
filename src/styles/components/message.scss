@@ -1,6 +1,6 @@
-@import "../mixins/mixins";
+@import "../mixins/bem";
 @import "../common/var";
-@import "../common/reset.scss";
+@import "../common/reset";
 
 @include b(message) {
     position: fixed;
@@ -12,8 +12,8 @@
     display: flex;
     align-items: center;
     transition: all .3s ease-in-out;
-    border-radius: $--border-radius-base;
-    box-shadow: $--bs-dark;
+    border-radius: $--br-base;
+    box-shadow: $--bs-spread;
     line-height: 20px;
     font-size: 14px;
 
@@ -48,5 +48,3 @@
         color: $--color-warning;
     }
 }
-
-@import "../common/transition.scss";

@@ -15,7 +15,7 @@
     "build:utils": "npx npx babel src/directives -d lib/directives",
     "build:common": "vue-cli-service build --target lib --name z-wheel-0201 src/index.js --dest lib",
     "build:entry": "node build/bin/build-entry.js",
-    "build:style": "npx gulp build --gulpfile src/styles/gulpfile.js && cp-cli src/styles/common lib/styles/common",
+    "build:style": "npx gulp build --gulpfile src/styles/gulpfile.js && cp-cli src/styles/common lib/styles/common && cp-cli src/styles/mixins lib/styles/mixins",
     "dist": "npm run build:entry && npm run build:common && npm run build:style && npm run build:utils"
   },
   "dependencies": {

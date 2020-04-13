@@ -9,11 +9,6 @@
     <i :class="icon" v-if="icon && !loading"></i>
     <i class="el-icon-loading" v-if="loading"></i>
     <span v-if="$slots.default"><slot></slot></span>
-	<span v-if="animation === 'ripple' && radius" class="z-button__ripple center-absolute" >
-		<span class="circle center-absolute"  
-		v-show="showRipple" :style="rippleStyles"></span>
-	</span>
-	<div v-if="animation === 'line'" class="z-button__line"></div>
   </button>
 </template>
 
@@ -22,8 +17,7 @@ export default {
 	name: 'ZButton',
 	data () {
 		return {
-			showRipple: false,
-			radius: 0
+			showRipple: false
 		};
 	},
 	props: {
@@ -54,10 +48,6 @@ export default {
 				return ['ripple','line'].includes(val);
 			}
 		},
-		// rippleColor: {
-		// 	type: String,
-		// 	default: 'rgba(0,0,0,0.1)'
-		// },
 		loading:Boolean,
 		icon:String,
 		plain:Boolean,
@@ -78,30 +68,15 @@ export default {
 					'is-circle': this.circle,
 					'is-disabled': this.disabled,
 					'is-float': this.float,
+					'is-ripple': this.animation === 'ripple',
 					'is-line': this.animation === 'line'
 				}
 			];
-		},
-		rippleStyles () {
-			return {
-				// background: this.rippleColor,
-				width: this.radius + 'px',
-				height: this.radius + 'px',
-			};
 		}
-	},
-	mounted () {
-		this.radius = Math.max(this.$refs.button.offsetWidth, this.$refs.button.offsetWidth);
 	},
 	methods: {
 		handleClick () {
 			this.$emit('click');
-			if(this.animation === 'ripple'){
-				this.showRipple = true;
-				setTimeout(() => {
-					this.showRipple = false;
-				}, 400);
-			}
 		}
 	}
 };

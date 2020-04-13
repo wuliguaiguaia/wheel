@@ -1,5 +1,8 @@
-@import "../mixins/mixins";
+@import "../mixins/bem";
 @import "../common/var";
 
 @include b(button-group) {
+  .z-button + .z-button {
+    margin-left: 10px;
+  }
 }

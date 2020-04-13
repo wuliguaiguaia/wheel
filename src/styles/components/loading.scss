@@ -1,7 +1,8 @@
-@import "../mixins/mixins";
+@import "../mixins/bem";
 @import "../common/var";
-@import "../common/reset.scss";
-@import "../common/transition.scss";
+@import "../common/reset";
+@import "../common/transition";
+@import "../common/animation";
 
 @include b(loading) {
     position: fixed;
@@ -10,59 +11,39 @@
     width: 100%;
     z-index: 2000;
     transition: opacity 0.3s;
-}
 
-@include b(loading__bar) {
-    width: 0%;
-    height: 3px;
-    background-image: -webkit-gradient(linear, left top, right top, from(#fa8252), to(#6aeeaa));
-    transition: width 500ms ease-in;
-
-    &.end {
-        animation: end 300ms ease-in;
+    @include e(bar){
+        width: 0%;
+        height: 2px;
+        background: $loading-bg;
+        transition: width 300ms ease-in;
+        
+        &.end {
+            animation: stretch-horizontal 200ms ease-in;
+        }
     }
-}
 
-@include b(loading__spin) {
-    width: 40px;
-    animation: progress-rotate 1s linear infinite;
-
-    .path {
-        animation: loading-dash 1.5s ease-in-out infinite;
-        stroke-dasharray: 90, 150;
-        stroke-dashoffset: 0;
-        stroke-width: 2;
-        stroke-linecap: round;
+    @include e(spin){
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        width: $loading-w;
+        height: $loading-w;
+        border: 1px solid $loading-bg;
+        border-radius: 50%;
+        animation: rotate .4s linear infinite;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -1px;
+            width: 8px; 
+            height: 8px;
+            background-color: #fff;
+        }
     }
-}
-
-@include b(loading__text) {
     
-}
-
-@keyframes end {
-    100% {
-        width: 101%;
+    @include e(text) {
+        
     }
-}
-
-@keyframes progress-rotate {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes loading-dash {
-  0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-  }
-  80% {
-    stroke-dasharray: 90, 150;
-    stroke-dashoffset: -40px;
-  }
-  100% {
-    stroke-dasharray: 90, 150;
-    stroke-dashoffset: -120px;
-  }
 }

@@ -1,0 +1,103 @@
+/* 变量约定
+    公共：$--[key]-[修饰符]
+    组件：$--[block]-[key]
+         $--[block]-[element]-[key]
+         $--[block]-[modifier]-[key]
+         $--[block]-[status]-[key]
+*/ 
+
+/* 修饰符约定：
+    颜色：primary success info warning danger
+        除默认可选四个 light lighter dark darker
+*/ 
+
+/* Alias
+    w: width
+    h: height
+    bg: background-color
+    fz: font-size
+    fw: font-weight
+    lh: line-height
+    b: border
+    bc: border-color
+    bw: border-width
+    br: border-radius
+    bs: box-shadow
+    p: padding
+    ph: padding 水平
+    pv: padding 垂直
+    m: margin
+    mh: margin 水平
+    mv: margin 垂直
+*/ 
+
+/* !default sass给var提供默认值 */
+
+/* color */ 
+$--color-primary:#FF4081 !default;
+$--color-success: #67C23A !default;
+$--color-info: #409EFF !default;
+$--color-warning: #E6A23C !default;
+$--color-danger: #F56C6C !default;
+
+$--color-primary-dark: #ca055e !default;
+$--color-primary-light: #ffccdc94 !default;
+
+/* font-color */ 
+$--fc-base: #303133 !default;
+$--fc-regular: #606266 !default;
+$--fc-light: #909399 !default;
+$--fc-holder: #C0C4CC !default;
+
+/* gradient-color */ 
+$--gradient-grey: linear-gradient(to right, #bdc3c7, #2c3e50);
+$--gradient-candy: linear-gradient(to right,#D3959B, #BFE6BA);
+
+/* background */
+$--bg-base: #F5F7FA !default;
+
+/* border */
+$--bc-base: #DCDFE6 !default;
+$--br-base: 2px !default;
+
+/* box-shadow */
+$--bs-base: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12) !default;
+$--bs-dark: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !default;
+$--bs-spread: 0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px 0 rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05) !default;
+
+/* font */
+$--fz-20: 20px !default;
+$--fz-18: 18px !default;
+$--fz-16: 16px !default;
+$--fz-14: 14px !default;
+$--fz-12: 12px !default;
+$--fw-base: 400 !default;
+$--fw-medium: 500 !default;
+$--fw-bold: 700 !default;
+
+/* icon */ 
+$icon-color: #666 !default;
+
+/*****************TODO: 组件的样式尽可能从上面取值 *****************/ 
+
+/* input */
+$input-h: 36px !default; 
+$input-p: 6px 0 4px !default; 
+$input-lh: 20px !default;
+$input--normal-p: 7px 10px!default; 
+
+/* switch */
+$switch-w: 36px !default;
+$switch-h: 14px !default;
+$switch-button-w: 20px !default;
+$switch-br: 14px !default;
+$switch-off-bg: rgba(0,0,0,.38) !default;
+$switch-button-off-bg: #fff !default;
+$switch-button-off-bs: rgba(0,0,0,.12) !default;
+$switch-disabled-bg: rgba(0,0,0,.12) !default;
+$switch-button-disabled-bg: rgba(0,0,0,.12) !default;
+
+$switch-normal-w: 40px !default;
+$switch-normal-h: 18px !default;
+$switch-normal-button-w: 14px !default;
+$switch-normal-br: 14px !default;

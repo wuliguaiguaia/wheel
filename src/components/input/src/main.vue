@@ -12,7 +12,7 @@
 			>{{labelName}}</span>
 
 			<!-- left -->
-			<span v-if="normal && labelName" class="z-input_label" 
+			<span v-if="normal && labelName" class="z-input__label" 
 			@click="hanleLabelClick">{{labelName}}</span>
 
 			<!-- left-before  -->
@@ -23,7 +23,7 @@
 			<!-- input -->
 			<input
 				v-if="!multiple"
-				:class="['z-input__default', normal&&'is-normal']" 
+				:class="['z-input--default', normal&&'z-input--normal']" 
 				ref="input"
 				v-bind="$attrs"
 				:type="showPasssword ? 'text' : type" 
@@ -37,7 +37,7 @@
 			>
 			<textarea 
 				v-else 
-				:class="['z-input__multiple', normal&&'is-normal']"
+				:class="['z-input--multiple', normal&&'z-input--normal']"
 				ref="input"
 				v-bind="$attrs"
 				:disabled="disabled"
@@ -62,7 +62,7 @@
 			<!-- under -->
 			<div :class="['z-input__under', helperText?'jus-between': 'jus-end']" 
 				v-if="helperText || (suffixIcon && maxlength)">
-				<p v-if="helperText" v-show="showHelperText" class="z-input__helperText">{{helperText}}</p>
+				<p v-if="helperText" v-show="showHelperText" class="z-input__helper-text">{{helperText}}</p>
 				<span v-if="suffixIcon && maxlength" class="z-input__limit">
 					{{textNumber}}/{{+maxlength}}
 				</span>
@@ -118,9 +118,7 @@ export default {
 		classes () {
 			return [
 				'z-input',
-				(this.labelFloat || this.labelFix)&&'is-label-move',
 				this.disabled && 'is-disabled',
-				// this.normal&&'is-normal',
 				this.canExpand && 'is-expand',
 				this.prefixIcon && 'is-prefix',
 				this.suffixIconClass.filter(v=>v).length && 'is-suffix',

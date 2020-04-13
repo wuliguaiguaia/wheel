@@ -44,12 +44,23 @@ const createTooltipDom = (el, binding) => {
 	return instance;
 };
 
-const enter = (instance) => {
+let overflow = null;
+
+const enter = function (instance) {
 	instance.show = true;
+	overflow = window.getComputedStyle(this).overflow;
+	this.style.overflow = 'visible';
+	Vue.nextTick(() => {
+		instance.$el.addEventListener('click', () => {
+			this.style.overflow = overflow;
+			return false;
+		});
+	});
 };
 
-const leave = (instance) => {
+const leave = function (instance) {
 	instance.show = false;
+	this.style.overflow = overflow;
 };
 
 tooltipDirective.install = Vue => {

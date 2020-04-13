@@ -1,17 +1,17 @@
-@import "../mixins/mixins";
+@import "../mixins/bem";
 @import "../common/var";
 
 @include b(input) {
     position: relative;
     display: inline-block;
     width: 100%;
-    color: $--color-text-primary;
-    font-size: $--font-size-medium;
+    color: $--fc-base;
+    font-size: 16px;
     cursor: pointer;
     
     @include e(label){
         font-size: 12px;
-        color: $--color-text-regular;
+        color: $--fc-regular;
         transition: all ease .3s;
         display: inline-block;
         
@@ -20,23 +20,23 @@
         }
     }
 
-    @include e(default multiple){
-        padding: $--input-padding-base;
+    @include m(default multiple){
+        padding: $input-p;
         width: 100%;
-        line-height: $--input-line-height-base;
+        line-height: $input-lh;
         border: none;
-        // height: $--input-height-base;
-        border-bottom: 1px solid $--border-color-dark;
+        border-bottom: 1px solid rgb(83, 81, 81);
         transition: all ease .3s;
-        font-size: $--font-size-medium;
+        box-sizing: border-box;
+        font-size: 16px;
         flex: 1;
         &::placeholder{
-            color: $--color-text-placeholder;
+            color: $--fc-holder;
         }
 
         &:hover{
-            border-color: $--border-color-dark;
-            box-shadow: 0 1px 0 0 $--border-color-dark;
+            border-color: rgb(83, 81, 81);
+            box-shadow: 0 1px 0 0 rgb(83, 81, 81);
         }
         
         &:focus{
@@ -44,18 +44,24 @@
             box-shadow: 0 1px 0 0 $--color-primary-dark;
         }
 
-        @include when(normal){
-            border: 1px solid transparent;
+    }
+    
+    @include m(normal){
+        border: 1px solid transparent;
+        box-shadow: none;
+        padding: $input--normal-p;
+        background-color: $--bg-base;
+        border-radius: $--br-base;
+        border: transparent;
+        &:hover,
+        &:focus{
+            border: transparent;
             box-shadow: none;
-            padding: $--input-padding-base-normal;
-            background-color: $--bg-light;
-            border-radius: $--border-radius-base;
         }
     }
 
     @include when(expand){
         transition: all ease-in-out .3s;
-        // animation: slide ease-in-out .3s forwards;
     }
 
     @include e(before){
@@ -70,18 +76,18 @@
         bottom: 4px;
     }
 
-    @include e(helperText){
-        font-size: $--font-size-extra-small;
+    @include e(helper-text){
+        font-size: 12px;
     }
     
     @include e(limit){
         justify-self: flex-end;
-        font-size: $--font-size-extra-small;
+        font-size: 12px;
     }
     
     @include e(under){
         position: absolute;
-        font-size: $--font-size-extra-small;
+        font-size: 12px;
         width: 100%;
         bottom: -20px;
     }
@@ -100,25 +106,19 @@
     }
     
     @include when(prefix){
-        .z-input__default {
+        .z-input--default {
             padding-left: calc(1em + 3px);
         }
     }
     
     @include when(suffix){
-        .z-input__default {
+        .z-input--default {
             padding-right: calc(1em + 3px);
         }
     }
 
     @include when(disabled){
-
+        // pointer-events: none;
     }
 }
-
-.show-slide-enter, .show-slide-leave-active {
-    width: 0;
-    opacity: 0;
-}
-
 
