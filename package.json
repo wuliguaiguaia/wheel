@@ -46,7 +46,7 @@
     "gulp-cssmin": "^0.2.0",
     "gulp-sass": "^4.0.2",
     "json-templater": "^1.2.0",
-    "karma": "^4.4.1",
+    "karma": "^6.3.16",
     "karma-chai": "^0.1.0",
     "karma-chai-spies": "^0.1.4",
     "karma-chrome-launcher": "^3.1.0",
