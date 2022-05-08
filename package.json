@@ -8,7 +8,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit --watch",
-    "test:watch": "npm run build test/**/* --no-cache & karma start",
+    "test": "npm run build test/**/* --no-cache & karma start",
     "link": "npx parcel build index.js",
     "open": "git open",
     "new": "node build/bin/new.js",
